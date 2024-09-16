@@ -59,7 +59,7 @@ primary_24 |>
 
 Describe what you think this code is doing below.
 
-**Answer**
+**Answer** Making the number more easy to read and understand
 
 ### Task 5: Better percentage calculation
 
@@ -90,7 +90,7 @@ primary_24 |>
 
 How did the results change from the previous task, and why?
 
-**Answer**
+**Answer** We have a new select function which will filter for the columns we want.
 
 ### Task 7: Mutate with ordering, part 2
 
@@ -108,7 +108,7 @@ primary_24 |>
 
 Is this a more interesting or useful answer? Why?
 
-**Answer**
+**Answer** It is more useful because it only includes the information we need. 
 
 ### Task 8: Standardize existing data using mutate
 
@@ -132,13 +132,13 @@ IMPORTANT: Notice that we created a new dataframe - standardized_maryland_cities
 ```{r}
 standardized_maryland_cities <- maryland_cities |>
   mutate(
-    upper_city = str_to_upper(city)
+    city = str_to_upper(city)
 )
 ```
 
 **Task** Search the Internet for tidyverse functions similar to str_to_upper. Name at least two and describe what they do.
 
-**Answer**
+**Answer** 
 
 There are lots of potential uses for standardization - addresses, zip codes, anything that can be misspelled or abbreviated.
 
@@ -166,7 +166,7 @@ Now that we've gotten a look, we can use `case_when` to give our new category co
 
 **Task** Run the following code and look at the output. Then write a sentence or two describing what you think the mutate statement is doing step by step.
 
-**Answer**
+**Answer** It is assigning names for the values that fit the criteria. 
 
 ```{r}
 maryland_winred_categories <- maryland_winred_contributions |>
@@ -175,7 +175,7 @@ maryland_winred_categories <- maryland_winred_contributions |>
         amount < 100 ~ "Less than $100",
         amount >= 100 & amount < 500 ~ "Between $100 and $499",
         amount >= 500 & amount < 1500 ~ "Between $500 and $1499",
-        amount >= 1500 & amount < 3000 ~ "Between $500 and $2999",
+        amount >= 1500 & amount < 3000 ~ "Between $1500 and $2999",
         amount >= 3000 ~ "$3,000 or more"
       )
   )
@@ -196,7 +196,7 @@ maryland_winred_categories |>
 ```
 What's the largest category in terms of dollar amount?
 
-**Answer** 
+**Answer** less than $100.
 
 Mutate is there to make your data more useful and to make it easier for you to ask more and better questions of it.
 
@@ -244,7 +244,7 @@ And now we only have five columns of data for whatever analysis we might want to
 
 Notice that we made a new variable to hold the result. Why is that important?
 
-**Answer**
+**Answer** To differentiate from the other data.
 
 ### Task 12: Combining filters
 
@@ -306,7 +306,7 @@ maryland_expenses <- maryland_expenses |> mutate(expenditure_date=mdy(expenditur
 head(maryland_expenses)
 ```
 
-**Answer:**
+**Answer:**The structure of the date was changed.
 
 Lubridate has functions for basically any type of character date format: mdy, ymd, even datetimes like ymd_hms.
 
@@ -342,4 +342,4 @@ So the month of June 2022 had the most expenditures by far in this data. We'll b
 
 Describe the values in the new `month` column - what do you think the data is showing here?
 
-**Answer**
+**Answer** the first day of the month.

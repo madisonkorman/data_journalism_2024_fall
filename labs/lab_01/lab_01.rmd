@@ -109,7 +109,8 @@ Store it as a variable object called `wv_summary` so that you can examine it wit
 
 ```{r}
 wv_summary <- westvirginia_winred_contributions |>
-  group_by(city) |>
+  filter(memo_text != 'Refund of Earmarked Contribution') |> 
+  group_by(state) |>
   summarise(
     count_contribs = n(),
     total_amount = sum(amount),
@@ -118,5 +119,5 @@ wv_summary <- westvirginia_winred_contributions |>
     min_amount = min(amount),
     max_amount = max(amount)
   ) |>
-  arrange(desc(total_amount))
+  arrange((total_amount))
 ```
