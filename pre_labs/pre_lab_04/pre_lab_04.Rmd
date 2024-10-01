@@ -38,7 +38,7 @@ library(refinr)
 
 ### Task 3: Load data
 
-**Task** Run the following code to load some campaign expenditure data focused on food-related expenses in Washington, D.C. **Answer**
+**Task** Run the following code to load some campaign expenditure data focused on food-related expenses in Washington, D.C. **Answer** I ran the code.
 
 ```{r}
 # Load data
@@ -51,7 +51,7 @@ dc_food
 
 ### Task 4: Group and count to identify problems in city column
 
-**Task** Run the following code to group and count records in the recipient_name column, and filter to examine only recipients that start with W. Name a problem that you see that is preventing proper grouping. **Answer**
+**Task** Run the following code to group and count records in the recipient_name column, and filter to examine only recipients that start with W. Name a problem that you see that is preventing proper grouping. **Answer** It did not correctly pluck out the lowercase 'w's.' Instead,the code is affecting the letters after the first letter in the word. 
 
 ```{r}
 # Now let's try and group and count the number of expenditures by recipient. To make it a bit more manageable, let's use another string function from `stringr` and filter for recipients that start with the uppercase "W" or lowercase "w" using the function `str_detect()` with a regular expression.  
@@ -69,7 +69,7 @@ dc_food |>
 
 ### Task 5: Use refinr to clean the city_clean field.
 
-**Task** Run the following code to make a copy of the recipient_name field called recipient_clean, then use the `key_collision_merge` function from refinr to attempt to standarize similar values. Store it as a new object called cleaned_dc_food. Click the black arrow on the table to examine the recipient_name and recipient_clean columns. Looking at the results on the first two pages only (first 20 rows), name two changes the refinr package made, by comparing recipient_name to recipient_clean. **Answer**
+**Task** Run the following code to make a copy of the recipient_name field called recipient_clean, then use the `key_collision_merge` function from refinr to attempt to standarize similar values. Store it as a new object called cleaned_dc_food. Click the black arrow on the table to examine the recipient_name and recipient_clean columns. Looking at the results on the first two pages only (first 20 rows), name two changes the refinr package made, by comparing recipient_name to recipient_clean. **Answer** Some things were capitalized when they weren't before and some were not changed and some were put into lowercase. 
 
 ```{r}
 cleaned_dc_food <- dc_food |>
@@ -82,7 +82,7 @@ cleaned_dc_food
 
 ### Task 6: Filter cleaned_dc_food to examine recipients that start with W
 
-**Task** Run the following code to group by recipient_clean and recipient_name, then filter for cities that start with W. Name three changes the refinr function made in the first 20 results. **Answer**
+**Task** Run the following code to group by recipient_clean and recipient_name, then filter for cities that start with W. Name three changes the refinr function made in the first 20 results. **Answer** It put everything into uppercase.It corrected the spacing. And it standardized Miller and Co
 
 ```{r}
 cleaned_dc_food |>
@@ -96,7 +96,7 @@ cleaned_dc_food |>
 
 ### Task 7: Use a different refinr method to clean the city_clean field.
 
-**Task** Run the following code to use the n_gram_merge() function to clean the data, then group by city_clean and city to examine cities that start with A. Look at the differences. Does the changes it made vary substantially from the previous use of key_collision_merge? **Answer**
+**Task** Run the following code to use the n_gram_merge() function to clean the data, then group by city_clean and city to examine cities that start with A. Look at the differences. Does the changes it made vary substantially from the previous use of key_collision_merge? **Answer** It looks very similar to the code for key_collision_merge. It uses the functions select and mutate using n_gram_merge. while key_collision_merge uses practically the same code with the main difference being key_collision_merge.
 
 ```{r}
 cleaned_dc_food <- dc_food |>

@@ -95,7 +95,7 @@ glimpse(texas_precinct_20)
 
 ### Task 7: Examine the franchise column for missing values.
 
-**Task** Run the following codeblock to group by mail votes, count the number of precinct results, then sort from highest to lowest on count. How many results are there where mail is NA? What's the implication there? Answer below. **Answer**: 402345	results. There may be issues with the 402345 results.
+**Task** Run the following codeblock to group by mail votes, count the number of precinct results, then sort from highest to lowest on count. How many results are there where mail is NA? What's the implication there? Answer below. **Answer**: 402345	results. They were in person votes.
 
 ```{r}
 
