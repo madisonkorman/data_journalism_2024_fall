@@ -92,8 +92,7 @@ westvirginia_winred_contributions |>
     count_contribs = n(),
     total_amount = sum(amount),
     mean_amount = mean(amount),
-    median_amount = median(amount)
-  ) |>
+    median_amount = median(amount)) |>
   arrange(desc(count_contribs))
 ```
 
