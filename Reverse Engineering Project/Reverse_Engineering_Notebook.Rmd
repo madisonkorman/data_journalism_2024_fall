@@ -43,3 +43,38 @@ arrange(desc(count))
 
 
 ```
+“Guilford County, the third-most populous county in North Carolina, rejected the largest number of mail-in ballots by Black voters statewide: 177. The rejection rate for Black voters, at 16.5%, was three times as high as the rejection rate for white voters, 5.5%, putting the county largely in line with the rest of the state.” 
+
+
+```{r}
+ absenstee |>
+  group_by(county_desc, race)|>
+  summarise(count = n())|>
+arrange(desc(count))
+
+
+```
+“So far, 2020 shows a similar pattern. As of Sept. 23, the rejection rate for mail-in ballots submitted by Black voters was about 3%, nearly three times as high as the rejection rate for white voters, according to data from the state.” 
+```{r}
+ NC_rejected <- absenstee |>
+  filter(ballot_rtn_status != "ACCEPTED",
+         ballot_req_type == "MAIL") |>
+  group_by(race)|>
+  summarise(count = n())|>
+arrange(desc(count))
+
+NC_total_race <- absenstee |>
+  filter(ballot_req_type == "MAIL") |>
+  group_by(race) |>
+  summarise(count = n()) |>
+arrange(desc(count))
+  
+NC_percent_rejected <- NC_total_race |> left_join(NC_rejected, join_by(race)) |>
+  rename(
+    total = count.x,
+    rejected = count.y
+  ) |>
+  mutate(percent_spolied = (rejected/total))
+
+
+```
