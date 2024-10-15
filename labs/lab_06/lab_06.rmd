@@ -97,23 +97,54 @@ current_registrations_2022 <- read_csv("data/current_registrations_by_county2022
 
 ## Answer questions
 
-Q1. Calculate the percentage of registered Democrats, Republicans and unaffiliated voters for the entire state in September 2024 and September 2022, and then calculate the percentage change for those three party categories (the formula for percentage change is easy to remember: (New-Old)/Old). How would you describe the changes in these partisan categories in a story? What's the most interesting thing about these changes that would be the lede of that story?
+Q1. Calculate the percentage of registered Democrats, Republicans and unaffiliated voters for the entire state in September 2024 and September 2022, and then calculate the percentage change for those three party categories (the formula for percentage change is easy to remember: (New-Old)/Old). How would you describe the changes in these partisan categories in a story? What's the most interesting thing about these changes that would be the lede of that story? 
 
-A1.
+A1. There is a bigger decrecrease amoungst democrats over the other parties. In a story I could talk about why this is happening.
 
 ```{r}
-current_registrations_2024_and_2022 <- left_join(current_registrations_2022, current_registrations_2024, join_by(COUNTY))
+#current_registrations_2024_and_2022 <- left_join(current_registrations_2022, current_registrations_2024, join_by(COUNTY))
   
+current_registrations_2024_and_2022 <- current_registrations_2024_and_2022 |>
+  mutate(
+    perc_DEM2022 = DEM_2022 / TOTAL_2022,
+    perc_REP2022 = REP_2022 / TOTAL_2022,
+    perc_UNAF2022 = UNAF_2022 / TOTAL_2022,
+    perc_DEM2024 = DEM_2024 / TOTAL_2024,
+    perc_REP2024 = REP_2024 / TOTAL_2024,
+    perc_UNAF2024 = UNAF_2024 / TOTAL_2024
+  ) |>
+  mutate(
+    perc_change_DEM = (perc_DEM2024 - perc_DEM2022) / perc_DEM2022,
+    perc_change_REP = (perc_REP2024 - perc_REP2022) / perc_REP2022,
+    perc_change_UNAF = (perc_UNAF2024 - perc_UNAF2022) / perc_UNAF2022
+  )
 
-mutate()
+current_registrations_2024_and_2022
 
 ```
 
 Q2. Among the Maryland jurisdictions with the most registered voters, which one had the biggest percentage increase in unaffiliated voters between 2022 and 2024? How did that county vote for governor in 2022 and for president in 2020? Contrast the partisan percentages of that county with the county that had the eighth-largest percentage increase in unaffiliated voters. You should display information from the data that shows the counties with the largest percentage increase first.
 
-A2.
+A2. The county with the eigth largest percentage was Frederick county and the largest was Prince George's. Prince George's is a blue county so in 2022 and 2020 they went blue. There are a lot if people moving into Prince George's which may account for the higher numbers.
 
 ```{r}
+
+current_registrations_2024_and_2022 <- current_registrations_2024_and_2022 |>
+  mutate(perc_increase_UNAF = (UNAF_2024 - UNAF_2022) / UNAF_2022 * 100)
+
+
+sorted_counties <- current_registrations_2024_and_2022 |>
+  arrange(desc(perc_increase_UNAF))
+
+
+largest_increase_county <- sorted_counties[1, ]
+
+
+eighth_largest_increase_county <- sorted_counties[8, ]
+
+
+largest_increase_county
+eighth_largest_increase_county
 
 ```
 
@@ -121,20 +152,38 @@ Q3. Do the party percentages of new registrants (% Dem, % Rep, % Unaffiliated) f
 
 In other words, did new registrants mirror the overall partisan composition of the electorate, or were they different? Do any of the methods of registration vary significantly from the overall partisan pattern? Which method is worthy of further exploration?
 
-A3.
+A3. More democrats tend to register by mail, online, or mva while republicans register at those places at much lower rates. 
 
 ```{r}
+#party_registrations_2024<-party_registrations_2024|>
+#  mutate(perc_dem2024=DEM/TOTAL,
+   #      perc_rep2024=REP/TOTAL,
+      #   perc_unaf2024=UNAF/TOTAL)
+
+#party_registrations_2022<-party_registrations_2022|>
+#  mutate(perc_dem2022=DEM/TOTAL,
+   #      perc_rep2022=REP/TOTAL,
+     #    perc_unaf2022=UNAF/TOTAL)
+   
 
 ```
 
 Q4. Choose your own adventure! Using both the 2024 and 2022 data for one of the dataframes (changes, removals or new registrations), ask and answer a question that makes at least one comparison and requires code to answer. That could involve calculating a percentage, percentage change or the raw difference between two columns.
 
-A4.
+A4. We could look into the amount of removals by party to see how it varies. 
 
 ```{r}
-
+removals_2024|>
+ mutate(perc_dem2024=DEM/TOTAL,
+        perc_rep2024=REP/TOTAL,
+        perc_unaf2024=UNAF/TOTAL)
 ```
-
+```{r}
+removals_2022|>
+ mutate(perc_dem2022=DEM/TOTAL,
+        perc_rep2022=REP/TOTAL,
+        perc_unaf2022=UNAF/TOTAL)
+```
 Q5. What's the best story idea or question you've seen as a result of the work you've done in this lab?
 
-A5.
+A5. I would say comparing the percentage of change to unaffiliated would make a great story. 
