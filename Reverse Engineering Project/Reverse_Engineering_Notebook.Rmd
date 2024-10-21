@@ -17,7 +17,9 @@ library(refinr)
 ```{r}
 absenstee<- read_csv("data/absentee_20181106.csv")
 ```
+```{r}
 
+```
 
 ```{r}
 absentee <- absenstee |>
@@ -27,36 +29,11 @@ glimpse(absenstee)
 ```
 
 
-```{r}
-absentee|>
-  summarise(ballot_rtn_status)
-```
-
 “Black voters were more than twice as likely to have mail-in ballots rejected than those submitted by the state’s white voters in 2018, and rejection rates for 2020 show a similar pattern, according to a new analysis by ProPublica and WRAL News.:’”
 
 ```{r}
- 
-absentee|>
-  group_by(race, ballot_rtn_status)|>
-  summarise(count = n())|>
-arrange(desc(count))
 
-
-```
-“Guilford County, the third-most populous county in North Carolina, rejected the largest number of mail-in ballots by Black voters statewide: 177. The rejection rate for Black voters, at 16.5%, was three times as high as the rejection rate for white voters, 5.5%, putting the county largely in line with the rest of the state.” 
-
-
-```{r}
- absenstee |>
-  group_by(county_desc, race)|>
-  summarise(count = n())|>
-arrange(desc(count))
-
-
-```
-“So far, 2020 shows a similar pattern. As of Sept. 23, the rejection rate for mail-in ballots submitted by Black voters was about 3%, nearly three times as high as the rejection rate for white voters, according to data from the state.” 
-```{r}
- NC_rejected <- absenstee |>
+NC_rejected <- absenstee |>
   filter(ballot_rtn_status != "ACCEPTED",
          ballot_req_type == "MAIL") |>
   group_by(race)|>
@@ -75,6 +52,109 @@ NC_percent_rejected <- NC_total_race |> left_join(NC_rejected, join_by(race)) |>
     rejected = count.y
   ) |>
   mutate(percent_spolied = (rejected/total))
+
+```
+“Moore County, which rejected about one-third of the 149 mail-in ballots returned by Black voters in 2018, says she was unaware that the ballot she sent in wasn’t counted.”
+```{r}
+Moore_rejected <- absenstee |>
+  filter(county_desc == "MOORE",
+         ballot_rtn_status != "ACCEPTED",
+         ballot_req_type == "MAIL") |>
+  group_by(race) |>
+  summarise(rejected_count = n())
+
+Moore_total <- absenstee |>
+  filter(county_desc == "MOORE",
+         ballot_req_type == "MAIL") |>
+  group_by(race) |>
+  summarise(total_count = n())
+
+
+Moore_rates <- Moore_total |>
+  left_join(Guilford_rejected, by = "race") |>
+  mutate(rejected_count = replace_na(rejected_count, 0),
+         rejection_rate = (rejected_count / total_count) * 100)
+
+Moore_rates
+```
+
+“Guilford County, the third-most populous county in North Carolina, rejected the largest number of mail-in ballots by Black voters statewide: 177. The rejection rate for Black voters, at 16.5%, was three times as high as the rejection rate for white voters, 5.5%, putting the county largely in line with the rest of the state in 2018.” 
+
+
+```{r}
+Guilford_rejected <- absenstee |>
+  filter(county_desc == "GUILFORD",
+         ballot_rtn_status != "ACCEPTED",
+         ballot_req_type == "MAIL") |>
+  group_by(race) |>
+  summarise(rejected_count = n())
+
+Guilford_total <- absenstee |>
+  filter(county_desc == "GUILFORD",
+         ballot_req_type == "MAIL") |>
+  group_by(race) |>
+  summarise(total_count = n())
+
+
+Guilford_rates <- Guilford_total |>
+  left_join(Guilford_rejected, by = "race") |>
+  mutate(rejected_count = replace_na(rejected_count, 0),
+         rejection_rate = (rejected_count / total_count) * 100)
+
+Guilford_rates
+
+
+
+```
+“The analysis by ProPublica and WRAL News shows 40% of rejected ballots were submitted by voters who identify as Black or African American, Indian American or Alaska Native, Asian, two or more races, or other.”
+```{r}
+NC_rejected <- absenstee |>
+  filter(ballot_rtn_status != "ACCEPTED",
+         ballot_req_type == "MAIL") |>
+  group_by(race)|>
+  summarise(count = n())|>
+arrange(desc(count))
+
+NC_total_race <- absenstee |>
+  filter(ballot_req_type == "MAIL") |>
+  group_by(race) |>
+  summarise(count = n()) |>
+arrange(desc(count))
+  
+NC_percent_rejected <- NC_total_race |> left_join(NC_rejected, join_by(race)) |>
+  rename(
+    total = count.x,
+    rejected = count.y
+  ) |>
+  mutate(percent_spolied = (rejected/total))
+
+
+```
+
+“The disparity holds for rural counties as well as urban ones, in areas dominated by Republican voters and Democratic voters alike. In largely urban Wake County, for example, the rejection rate for ballots cast by Black voters is twice that of ballots cast by white voters.” 
+
+```{r}
+Wake_rejected <- absenstee |>
+  filter(county_desc == "WAKE",
+         ballot_rtn_status != "ACCEPTED",
+         ballot_req_type == "MAIL") |>
+  group_by(race) |>
+  summarise(rejected_count = n())
+
+Wake_total <- absenstee |>
+  filter(county_desc == "WAKE",
+         ballot_req_type == "MAIL") |>
+  group_by(race) |>
+  summarise(total_count = n())
+
+
+Wake_rates <- Wake_total |>
+  left_join(Wake_rejected, by = "race") |>
+  mutate(rejected_count = replace_na(rejected_count, 0),
+         rejection_rate = (rejected_count / total_count) * 100)
+
+Wake_rates
+
 
 
 ```
