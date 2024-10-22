@@ -17,6 +17,8 @@ library(refinr)
 ```{r}
 absenstee<- read_csv("data/absentee_20181106.csv")
 ```
+
+
 ```{r}
 absenstee<-clean_names(absenstee)
 glimpse(absenstee)

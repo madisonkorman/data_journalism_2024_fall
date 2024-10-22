@@ -1754,37 +1754,13 @@ display: none;
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBsb2FkIHRoZSB0aWR5dmVyc2Vcbm9wdGlvbnMoc2NpcGVuPTk5OSlcbmxpYnJhcnkodGlkeXZlcnNlKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBsb2FkIHRoZSB0aWR5dmVyc2Vcbm9wdGlvbnMoc2NpcGVuPTk5OSlcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGphbml0b3IpXG5saWJyYXJ5KHJlZmlucilcbmBgYCJ9 -->
 <pre class="r"><code># load the tidyverse
 options(scipen=999)
-library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoi4pSA4pSAIEF0dGFjaGluZyBjb3JlIHRpZHl2ZXJzZSBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDIuMC4wIOKUgOKUgFxu4pyUIGRwbHlyICAgICAxLjEuNCAgICAg4pyUIHJlYWRyICAgICAyLjEuNVxu4pyUIGZvcmNhdHMgICAxLjAuMCAgICAg4pyUIHN0cmluZ3IgICAxLjUuMVxu4pyUIGdncGxvdDIgICAzLjUuMSAgICAg4pyUIHRpYmJsZSAgICAzLjIuMVxu4pyUIGx1YnJpZGF0ZSAxLjkuMyAgICAg4pyUIHRpZHlyICAgICAxLjMuMVxu4pyUIHB1cnJyICAgICAxLjAuMiAgICAgXG7ilIDilIAgQ29uZmxpY3RzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG7inJYgZHBseXI6OmZpbHRlcigpIG1hc2tzIHN0YXRzOjpmaWx0ZXIoKVxu4pyWIGRwbHlyOjpsYWcoKSAgICBtYXNrcyBzdGF0czo6bGFnKClcbuKEuSBVc2UgdGhlIFx1MDAxYl04OztodHRwOi8vY29uZmxpY3RlZC5yLWxpYi5vcmcvXHUwMDA3Y29uZmxpY3RlZCBwYWNrYWdlXHUwMDFiXTg7O1x1MDAwNyB0byBmb3JjZSBhbGwgY29uZmxpY3RzIHRvIGJlY29tZSBlcnJvcnNcbiJ9 -->
-<pre><code>── Attaching core tidyverse packages ─────────────────────────────────────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ───────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGphbml0b3IpXG5gYGAifQ== -->
-<pre class="r"><code>library(lubridate)
-library(janitor)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYamFuaXRvcuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBjaGlzcS50ZXN0LCBmaXNoZXIudGVzdFxuIn0= -->
-<pre><code>
-Attaching package: ‘janitor’
-
-The following objects are masked from ‘package:stats’:
-
-    chisq.test, fisher.test</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWZpbnIpXG5gYGAifQ== -->
-<pre class="r"><code>library(refinr)</code></pre>
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(refinr)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1798,11 +1774,11 @@ The following objects are masked from ‘package:stats’:
   dat &lt;- vroom(...)
   problems(dat)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMjExMTc5NyBDb2x1bW5zOiAzNlxu4pSA4pSAIENvbHVtbiBzcGVjaWZpY2F0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuRGVsaW1pdGVyOiBcIixcIlxuY2hyICgzMik6IGNvdW50eV9kZXNjLCB2b3Rlcl9yZWdfbnVtLCBuY2lkLCB2b3Rlcl9sYXN0X25hbWUsIHZvdGVyX2ZpcnN0X25hbWUsIHZvdGVyX21pZGRsZV9uYW1lLCByYWNlLCBnZW4uLi5cbmRibCAgKDMpOiBhZ2UsIHZvdGVyX3ppcCwgYmFsbG90X21haWxfemlwXG5sZ2wgICgxKTogb3RoZXJfY2l0eV9zdGF0ZV96aXBcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMjExMTc5NyBDb2x1bW5zOiAzNlxu4pSA4pSAIENvbHVtbiBzcGVjaWZpY2F0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuRGVsaW1pdGVyOiBcIixcIlxuY2hyICgzMik6IGNvdW50eV9kZXNjLCB2b3Rlcl9yZWdfbnVtLCBuY2lkLCB2b3Rlcl9sYXN0X25hbWUsIHZvdGVyX2ZpcnN0X25hbWUsIHZvdGVyX21pZGRsZV9uYW1lLCByYWNlLCBnLi4uXG5kYmwgICgzKTogYWdlLCB2b3Rlcl96aXAsIGJhbGxvdF9tYWlsX3ppcFxubGdsICAoMSk6IG90aGVyX2NpdHlfc3RhdGVfemlwXG5cbuKEuSBVc2UgYHNwZWMoKWAgdG8gcmV0cmlldmUgdGhlIGZ1bGwgY29sdW1uIHNwZWNpZmljYXRpb24gZm9yIHRoaXMgZGF0YS5cbuKEuSBTcGVjaWZ5IHRoZSBjb2x1bW4gdHlwZXMgb3Igc2V0IGBzaG93X2NvbF90eXBlcyA9IEZBTFNFYCB0byBxdWlldCB0aGlzIG1lc3NhZ2UuXG4ifQ== -->
 <pre><code>Rows: 2111797 Columns: 36
-── Column specification ───────────────────────────────────────────────────────────────────────────────────────
+── Column specification ─────────────────────────────────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
-chr (32): county_desc, voter_reg_num, ncid, voter_last_name, voter_first_name, voter_middle_name, race, gen...
+chr (32): county_desc, voter_reg_num, ncid, voter_last_name, voter_first_name, voter_middle_name, race, g...
 dbl  (3): age, voter_zip, ballot_mail_zip
 lgl  (1): other_city_state_zip
 
@@ -1811,62 +1787,61 @@ lgl  (1): other_city_state_zip
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWJzZW50ZWUgPC0gYWJzZW5zdGVlIHw+XG4gIGNsZWFuX25hbWVzKClcblxuZ2xpbXBzZShhYnNlbnN0ZWUpXG5gYGAifQ== -->
-<pre class="r"><code>absentee &lt;- absenstee |&gt;
-  clean_names()
-
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWJzZW5zdGVlPC1jbGVhbl9uYW1lcyhhYnNlbnN0ZWUpXG5nbGltcHNlKGFic2Vuc3RlZSlcbmBgYCJ9 -->
+<pre class="r"><code>absenstee&lt;-clean_names(absenstee)
 glimpse(absenstee)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMiwxMTEsNzk3XG5Db2x1bW5zOiAzNlxuJCBjb3VudHlfZGVzYyAgICAgICAgICAgICAgICA8Y2hyPiBcIkFMQU1BTkNFXCIsIFwiQUxBTUFOQ0VcIiwgXCJBTEFNQU5DRVwiLCBcIkFMQU1BTkNFXCIsIFwiQUxBTUFOQ0VcIiwgXCJBTEFNQU5DRVwiLCBcIkHigKZcbiQgdm90ZXJfcmVnX251bSAgICAgICAgICAgICAgPGNocj4gXCIwMDAwMDkwMTk2NzRcIiwgXCIwMDAwMDkxMjk1ODlcIiwgXCIwMDAwMDkwMjE5NDdcIiwgXCIwMDAwMDkxMzk5MTlcIiwgXCIwMDAwMDkwNjjigKZcbiQgbmNpZCAgICAgICAgICAgICAgICAgICAgICAgPGNocj4gXCJBQTY5NzQ3XCIsIFwiQUExNzA1MTNcIiwgXCJBQTcxOTgzXCIsIFwiQUExNzgzMzZcIiwgXCJBQTExNzcyOFwiLCBcIkFBMjAwNTkyXCIsIFwiQUEx4oCmXG4kIHZvdGVyX2xhc3RfbmFtZSAgICAgICAgICAgIDxjaHI+IFwiQUFST05cIiwgXCJBQVJPTlwiLCBcIkFBUk9OXCIsIFwiQUJCQVNcIiwgXCJBQkJBU1wiLCBcIkFCQk9UXCIsIFwiQUJCT1RUXCIsIFwiQUJCT1RUXCIsIOKAplxuJCB2b3Rlcl9maXJzdF9uYW1lICAgICAgICAgICA8Y2hyPiBcIkNMQVVESUFcIiwgXCJKQU1FU1wiLCBcIldJTExJRVwiLCBcIkpFTk5JRkVSXCIsIFwiUkFGQVRcIiwgXCJTT1BISUFcIiwgXCJCRVZFUkxZXCIsIFwiQuKAplxuJCB2b3Rlcl9taWRkbGVfbmFtZSAgICAgICAgICA8Y2hyPiBcIkhBWURFTlwiLCBcIk1JQ0hBRUxcIiwgXCJEQUxFXCIsIFwiQU5OXCIsIE5BLCBcIkVMSVpBQkVUSFwiLCBcIk1VVEVSXCIsIFwiQ0hSSVNUT1BIRVLigKZcbiQgcmFjZSAgICAgICAgICAgICAgICAgICAgICAgPGNocj4gXCJXSElURVwiLCBcIldISVRFXCIsIFwiV0hJVEVcIiwgXCJXSElURVwiLCBcIkFTSUFOXCIsIFwiV0hJVEVcIiwgXCJXSElURVwiLCBcIldISVRFXCIsIFwiV+KAplxuJCBnZW5kZXIgICAgICAgICAgICAgICAgICAgICA8Y2hyPiBcIkZcIiwgXCJNXCIsIFwiTVwiLCBcIkZcIiwgXCJGXCIsIFwiRlwiLCBcIkZcIiwgXCJNXCIsIFwiTVwiLCBcIk1cIiwgXCJNXCIsIFwiRlwiLCBcIkZcIiwgXCJNXCIsIFwiTVwiLOKAplxuJCBhZ2UgICAgICAgICAgICAgICAgICAgICAgICA8ZGJsPiA3MywgNzAsIDc0LCAzOCwgNjYsIDI1LCA4MywgMjUsIDUwLCA3NCwgODgsIDM1LCAyNywgNjcsIDQwLCA3NCwgNDUsIDI0LCA1MeKAplxuJCB2b3Rlcl9zdHJlZXRfYWRkcmVzcyAgICAgICA8Y2hyPiBcIjEwMTMgIEVESVRIIFNUXCIsIFwiNTYwOCAgT0xEIENIRVJPS0VFIExOXCIsIFwiMTAxMyAgRURJVEggU1RcIiwgXCIzMDI3ICBUUlVJVFTigKZcbiQgdm90ZXJfY2l0eSAgICAgICAgICAgICAgICAgPGNocj4gXCJCVVJMSU5HVE9OXCIsIFwiR1JBSEFNXCIsIFwiQlVSTElOR1RPTlwiLCBcIkJVUkxJTkdUT05cIiwgXCJCVVJMSU5HVE9OXCIsIFwiQlVSTElOR+KAplxuJCB2b3Rlcl9zdGF0ZSAgICAgICAgICAgICAgICA8Y2hyPiBcIk5DXCIsIFwiTkNcIiwgXCJOQ1wiLCBcIk5DXCIsIFwiTkNcIiwgXCJOQ1wiLCBcIk5DXCIsIFwiTkNcIiwgXCJOQ1wiLCBcIk5DXCIsIFwiTkNcIiwgXCJOQ1wiLCBcIk7igKZcbiQgdm90ZXJfemlwICAgICAgICAgICAgICAgICAgPGRibD4gMjcyMTUsIDI3MjUzLCAyNzIxNSwgMjcyMTUsIDI3MjE1LCAyNzIxNSwgMjcyMTUsIDI3MzAyLCAyNzM0OSwgMjcyMTcsIDI3MjHigKZcbiQgYmFsbG90X21haWxfc3RyZWV0X2FkZHJlc3MgPGNocj4gTkEsIE5BLCBOQSwgXCJGT05USU5WR0VOIDIwXCIsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTuKAplxuJCBiYWxsb3RfbWFpbF9jaXR5ICAgICAgICAgICA8Y2hyPiBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQeKAplxuJCBiYWxsb3RfbWFpbF9zdGF0ZSAgICAgICAgICA8Y2hyPiBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQeKAplxuJCBiYWxsb3RfbWFpbF96aXAgICAgICAgICAgICA8ZGJsPiBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQeKAplxuJCBvdGhlcl9tYWlsX2FkZHIxICAgICAgICAgICA8Y2hyPiBOQSwgTkEsIE5BLCBcIktVTkdMViA0NDIzMVwiLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5B4oCmXG4kIG90aGVyX21haWxfYWRkcjIgICAgICAgICAgIDxjaHI+IE5BLCBOQSwgTkEsIFwiU1dFREVOXCIsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCDigKZcbiQgb3RoZXJfY2l0eV9zdGF0ZV96aXAgICAgICAgPGxnbD4gTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkHigKZcbiQgZWxlY3Rpb25fZHQgICAgICAgICAgICAgICAgPGNocj4gXCIxMS8wNi8yMDE4XCIsIFwiMTEvMDYvMjAxOFwiLCBcIjExLzA2LzIwMThcIiwgXCIxMS8wNi8yMDE4XCIsIFwiMTEvMDYvMjAxOFwiLCBcIjExL+KAplxuJCB2b3Rlcl9wYXJ0eV9jb2RlICAgICAgICAgICA8Y2hyPiBcIlVOQVwiLCBcIkRFTVwiLCBcIlVOQVwiLCBcIkRFTVwiLCBcIkRFTVwiLCBcIkRFTVwiLCBcIlJFUFwiLCBcIlVOQVwiLCBcIlVOQVwiLCBcIlJFUFwiLCBcIlJFUOKAplxuJCBwcmVjaW5jdF9kZXNjICAgICAgICAgICAgICA8Y2hyPiBcIkJVUkxJTkdUT04gNFwiLCBcIk5PUlRIIE5FV0xJTlwiLCBcIkJVUkxJTkdUT04gNFwiLCBcIkNFTlRSQUwgQk9PTkVcIiwgXCJTT1VUSCBCT+KAplxuJCBjb25nX2Rpc3RfZGVzYyAgICAgICAgICAgICA8Y2hyPiBcIkNPTkdSRVNTSU9OQUwgRElTVFJJQ1QgNlwiLCBcIkNPTkdSRVNTSU9OQUwgRElTVFJJQ1QgNlwiLCBcIkNPTkdSRVNTSU9OQUwgRElT4oCmXG4kIG5jX2hvdXNlX2Rlc2MgICAgICAgICAgICAgIDxjaHI+IFwiTkMgSE9VU0UgRElTVFJJQ1QgNjNcIiwgXCJOQyBIT1VTRSBESVNUUklDVCA2NFwiLCBcIk5DIEhPVVNFIERJU1RSSUNUIDYzXCIsIFwiTuKAplxuJCBuY19zZW5hdGVfZGVzYyAgICAgICAgICAgICA8Y2hyPiBcIk5DIFNFTkFURSBESVNUUklDVCAyNFwiLCBcIk5DIFNFTkFURSBESVNUUklDVCAyNFwiLCBcIk5DIFNFTkFURSBESVNUUklDVCAyNFwiLOKAplxuJCBiYWxsb3RfcmVxX2RlbGl2ZXJ5X3R5cGUgICA8Y2hyPiBcIklOIFBFUlNPTlwiLCBcIklOIFBFUlNPTlwiLCBcIklOIFBFUlNPTlwiLCBcIkUtTUFJTFwiLCBcIklOIFBFUlNPTlwiLCBcIklOIFBFUlNPTlwiLOKAplxuJCBiYWxsb3RfcmVxX3R5cGUgICAgICAgICAgICA8Y2hyPiBcIk9ORS1TVE9QXCIsIFwiT05FLVNUT1BcIiwgXCJPTkUtU1RPUFwiLCBcIk1BSUxcIiwgXCJPTkUtU1RPUFwiLCBcIk9ORS1TVE9QXCIsIFwiT05FLVPigKZcbiQgYmFsbG90X3JlcXVlc3RfcGFydHkgICAgICAgPGNocj4gXCJVTkFcIiwgXCJERU1cIiwgXCJVTkFcIiwgXCJERU1cIiwgXCJERU1cIiwgXCJERU1cIiwgXCJSRVBcIiwgXCJVTkFcIiwgXCJVTkFcIiwgXCJSRVBcIiwgXCJSRVDigKZcbiQgYmFsbG90X3JlcV9kdCAgICAgICAgICAgICAgPGNocj4gXCIxMS8wMS8yMDE4XCIsIFwiMTAvMTgvMjAxOFwiLCBcIjEwLzE3LzIwMThcIiwgXCIxMC8xMC8yMDE4XCIsIFwiMTAvMjYvMjAxOFwiLCBcIjExL+KAplxuJCBiYWxsb3Rfc2VuZF9kdCAgICAgICAgICAgICA8Y2hyPiBcIjExLzAxLzIwMThcIiwgXCIxMC8xOC8yMDE4XCIsIFwiMTAvMTcvMjAxOFwiLCBcIjEwLzExLzIwMThcIiwgXCIxMC8yNi8yMDE4XCIsIFwiMTEv4oCmXG4kIGJhbGxvdF9ydG5fZHQgICAgICAgICAgICAgIDxjaHI+IFwiMTEvMDEvMjAxOFwiLCBcIjEwLzE4LzIwMThcIiwgXCIxMC8xNy8yMDE4XCIsIFwiMTEvMDYvMjAxOFwiLCBcIjEwLzI2LzIwMThcIiwgXCIxMS/igKZcbiQgYmFsbG90X3J0bl9zdGF0dXMgICAgICAgICAgPGNocj4gXCJBQ0NFUFRFRFwiLCBcIkFDQ0VQVEVEXCIsIFwiQUNDRVBURURcIiwgXCJBQ0NFUFRFRFwiLCBcIkFDQ0VQVEVEXCIsIFwiQUNDRVBURURcIiwgXCJB4oCmXG4kIHNpdGVfbmFtZSAgICAgICAgICAgICAgICAgIDxjaHI+IFwiSE9MTFkgSElMTCBNQUxMXCIsIFwiQUxBTUFOQ0UgQ09VTlRZIE9GRklDRSBBTk5FWCBCVUlMRElORyAoQVVESVRPUklVTSlcIiwgXCLigKZcbiQgc2RyICAgICAgICAgICAgICAgICAgICAgICAgPGNocj4gTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkHigKZcbiQgbWFpbF92ZXJpX3N0YXR1cyAgICAgICAgICAgPGNocj4gTkEsIE5BLCBOQSwgTkEsIE5BLCBcIlZFUklGSUVEXCIsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQeKAplxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMiwxMTEsNzk3XG5Db2x1bW5zOiAzNlxuJCBjb3VudHlfZGVzYyAgICAgICAgICAgICAgICA8Y2hyPiBcIkFMQU1BTkNFXCIsIFwiQUxBTUFOQ0VcIiwgXCJBTEFNQU5DRVwiLCBcIkFMQU1BTkNFXCIsIFwiQUxBTUFOQ0VcIiwgXCJBTEFNQU5DRVwiLCDigKZcbiQgdm90ZXJfcmVnX251bSAgICAgICAgICAgICAgPGNocj4gXCIwMDAwMDkwMTk2NzRcIiwgXCIwMDAwMDkxMjk1ODlcIiwgXCIwMDAwMDkwMjE5NDdcIiwgXCIwMDAwMDkxMzk5MTlcIiwgXCIwMDAwMDkw4oCmXG4kIG5jaWQgICAgICAgICAgICAgICAgICAgICAgIDxjaHI+IFwiQUE2OTc0N1wiLCBcIkFBMTcwNTEzXCIsIFwiQUE3MTk4M1wiLCBcIkFBMTc4MzM2XCIsIFwiQUExMTc3MjhcIiwgXCJBQTIwMDU5MlwiLCBcIkHigKZcbiQgdm90ZXJfbGFzdF9uYW1lICAgICAgICAgICAgPGNocj4gXCJBQVJPTlwiLCBcIkFBUk9OXCIsIFwiQUFST05cIiwgXCJBQkJBU1wiLCBcIkFCQkFTXCIsIFwiQUJCT1RcIiwgXCJBQkJPVFRcIiwgXCJBQkJPVFRcIuKAplxuJCB2b3Rlcl9maXJzdF9uYW1lICAgICAgICAgICA8Y2hyPiBcIkNMQVVESUFcIiwgXCJKQU1FU1wiLCBcIldJTExJRVwiLCBcIkpFTk5JRkVSXCIsIFwiUkFGQVRcIiwgXCJTT1BISUFcIiwgXCJCRVZFUkxZXCIsIOKAplxuJCB2b3Rlcl9taWRkbGVfbmFtZSAgICAgICAgICA8Y2hyPiBcIkhBWURFTlwiLCBcIk1JQ0hBRUxcIiwgXCJEQUxFXCIsIFwiQU5OXCIsIE5BLCBcIkVMSVpBQkVUSFwiLCBcIk1VVEVSXCIsIFwiQ0hSSVNUT1BI4oCmXG4kIHJhY2UgICAgICAgICAgICAgICAgICAgICAgIDxjaHI+IFwiV0hJVEVcIiwgXCJXSElURVwiLCBcIldISVRFXCIsIFwiV0hJVEVcIiwgXCJBU0lBTlwiLCBcIldISVRFXCIsIFwiV0hJVEVcIiwgXCJXSElURVwiLCDigKZcbiQgZ2VuZGVyICAgICAgICAgICAgICAgICAgICAgPGNocj4gXCJGXCIsIFwiTVwiLCBcIk1cIiwgXCJGXCIsIFwiRlwiLCBcIkZcIiwgXCJGXCIsIFwiTVwiLCBcIk1cIiwgXCJNXCIsIFwiTVwiLCBcIkZcIiwgXCJGXCIsIFwiTVwiLCBcIk3igKZcbiQgYWdlICAgICAgICAgICAgICAgICAgICAgICAgPGRibD4gNzMsIDcwLCA3NCwgMzgsIDY2LCAyNSwgODMsIDI1LCA1MCwgNzQsIDg4LCAzNSwgMjcsIDY3LCA0MCwgNzQsIDQ1LCAyNCwg4oCmXG4kIHZvdGVyX3N0cmVldF9hZGRyZXNzICAgICAgIDxjaHI+IFwiMTAxMyAgRURJVEggU1RcIiwgXCI1NjA4ICBPTEQgQ0hFUk9LRUUgTE5cIiwgXCIxMDEzICBFRElUSCBTVFwiLCBcIjMwMjcgIFRSVUnigKZcbiQgdm90ZXJfY2l0eSAgICAgICAgICAgICAgICAgPGNocj4gXCJCVVJMSU5HVE9OXCIsIFwiR1JBSEFNXCIsIFwiQlVSTElOR1RPTlwiLCBcIkJVUkxJTkdUT05cIiwgXCJCVVJMSU5HVE9OXCIsIFwiQlVSTEnigKZcbiQgdm90ZXJfc3RhdGUgICAgICAgICAgICAgICAgPGNocj4gXCJOQ1wiLCBcIk5DXCIsIFwiTkNcIiwgXCJOQ1wiLCBcIk5DXCIsIFwiTkNcIiwgXCJOQ1wiLCBcIk5DXCIsIFwiTkNcIiwgXCJOQ1wiLCBcIk5DXCIsIFwiTkNcIiwg4oCmXG4kIHZvdGVyX3ppcCAgICAgICAgICAgICAgICAgIDxkYmw+IDI3MjE1LCAyNzI1MywgMjcyMTUsIDI3MjE1LCAyNzIxNSwgMjcyMTUsIDI3MjE1LCAyNzMwMiwgMjczNDksIDI3MjE3LCAyN+KAplxuJCBiYWxsb3RfbWFpbF9zdHJlZXRfYWRkcmVzcyA8Y2hyPiBOQSwgTkEsIE5BLCBcIkZPTlRJTlZHRU4gMjBcIiwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLOKAplxuJCBiYWxsb3RfbWFpbF9jaXR5ICAgICAgICAgICA8Y2hyPiBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCDigKZcbiQgYmFsbG90X21haWxfc3RhdGUgICAgICAgICAgPGNocj4gTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwg4oCmXG4kIGJhbGxvdF9tYWlsX3ppcCAgICAgICAgICAgIDxkYmw+IE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIOKAplxuJCBvdGhlcl9tYWlsX2FkZHIxICAgICAgICAgICA8Y2hyPiBOQSwgTkEsIE5BLCBcIktVTkdMViA0NDIzMVwiLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIOKAplxuJCBvdGhlcl9tYWlsX2FkZHIyICAgICAgICAgICA8Y2hyPiBOQSwgTkEsIE5BLCBcIlNXRURFTlwiLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQeKAplxuJCBvdGhlcl9jaXR5X3N0YXRlX3ppcCAgICAgICA8bGdsPiBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCDigKZcbiQgZWxlY3Rpb25fZHQgICAgICAgICAgICAgICAgPGNocj4gXCIxMS8wNi8yMDE4XCIsIFwiMTEvMDYvMjAxOFwiLCBcIjExLzA2LzIwMThcIiwgXCIxMS8wNi8yMDE4XCIsIFwiMTEvMDYvMjAxOFwiLCBcIjHigKZcbiQgdm90ZXJfcGFydHlfY29kZSAgICAgICAgICAgPGNocj4gXCJVTkFcIiwgXCJERU1cIiwgXCJVTkFcIiwgXCJERU1cIiwgXCJERU1cIiwgXCJERU1cIiwgXCJSRVBcIiwgXCJVTkFcIiwgXCJVTkFcIiwgXCJSRVBcIiwgXCJS4oCmXG4kIHByZWNpbmN0X2Rlc2MgICAgICAgICAgICAgIDxjaHI+IFwiQlVSTElOR1RPTiA0XCIsIFwiTk9SVEggTkVXTElOXCIsIFwiQlVSTElOR1RPTiA0XCIsIFwiQ0VOVFJBTCBCT09ORVwiLCBcIlNPVVRIIOKAplxuJCBjb25nX2Rpc3RfZGVzYyAgICAgICAgICAgICA8Y2hyPiBcIkNPTkdSRVNTSU9OQUwgRElTVFJJQ1QgNlwiLCBcIkNPTkdSRVNTSU9OQUwgRElTVFJJQ1QgNlwiLCBcIkNPTkdSRVNTSU9OQUwgROKAplxuJCBuY19ob3VzZV9kZXNjICAgICAgICAgICAgICA8Y2hyPiBcIk5DIEhPVVNFIERJU1RSSUNUIDYzXCIsIFwiTkMgSE9VU0UgRElTVFJJQ1QgNjRcIiwgXCJOQyBIT1VTRSBESVNUUklDVCA2M1wiLCDigKZcbiQgbmNfc2VuYXRlX2Rlc2MgICAgICAgICAgICAgPGNocj4gXCJOQyBTRU5BVEUgRElTVFJJQ1QgMjRcIiwgXCJOQyBTRU5BVEUgRElTVFJJQ1QgMjRcIiwgXCJOQyBTRU5BVEUgRElTVFJJQ1QgMjTigKZcbiQgYmFsbG90X3JlcV9kZWxpdmVyeV90eXBlICAgPGNocj4gXCJJTiBQRVJTT05cIiwgXCJJTiBQRVJTT05cIiwgXCJJTiBQRVJTT05cIiwgXCJFLU1BSUxcIiwgXCJJTiBQRVJTT05cIiwgXCJJTiBQRVJTT07igKZcbiQgYmFsbG90X3JlcV90eXBlICAgICAgICAgICAgPGNocj4gXCJPTkUtU1RPUFwiLCBcIk9ORS1TVE9QXCIsIFwiT05FLVNUT1BcIiwgXCJNQUlMXCIsIFwiT05FLVNUT1BcIiwgXCJPTkUtU1RPUFwiLCBcIk9OReKAplxuJCBiYWxsb3RfcmVxdWVzdF9wYXJ0eSAgICAgICA8Y2hyPiBcIlVOQVwiLCBcIkRFTVwiLCBcIlVOQVwiLCBcIkRFTVwiLCBcIkRFTVwiLCBcIkRFTVwiLCBcIlJFUFwiLCBcIlVOQVwiLCBcIlVOQVwiLCBcIlJFUFwiLCBcIlLigKZcbiQgYmFsbG90X3JlcV9kdCAgICAgICAgICAgICAgPGNocj4gXCIxMS8wMS8yMDE4XCIsIFwiMTAvMTgvMjAxOFwiLCBcIjEwLzE3LzIwMThcIiwgXCIxMC8xMC8yMDE4XCIsIFwiMTAvMjYvMjAxOFwiLCBcIjHigKZcbiQgYmFsbG90X3NlbmRfZHQgICAgICAgICAgICAgPGNocj4gXCIxMS8wMS8yMDE4XCIsIFwiMTAvMTgvMjAxOFwiLCBcIjEwLzE3LzIwMThcIiwgXCIxMC8xMS8yMDE4XCIsIFwiMTAvMjYvMjAxOFwiLCBcIjHigKZcbiQgYmFsbG90X3J0bl9kdCAgICAgICAgICAgICAgPGNocj4gXCIxMS8wMS8yMDE4XCIsIFwiMTAvMTgvMjAxOFwiLCBcIjEwLzE3LzIwMThcIiwgXCIxMS8wNi8yMDE4XCIsIFwiMTAvMjYvMjAxOFwiLCBcIjHigKZcbiQgYmFsbG90X3J0bl9zdGF0dXMgICAgICAgICAgPGNocj4gXCJBQ0NFUFRFRFwiLCBcIkFDQ0VQVEVEXCIsIFwiQUNDRVBURURcIiwgXCJBQ0NFUFRFRFwiLCBcIkFDQ0VQVEVEXCIsIFwiQUNDRVBURURcIiwg4oCmXG4kIHNpdGVfbmFtZSAgICAgICAgICAgICAgICAgIDxjaHI+IFwiSE9MTFkgSElMTCBNQUxMXCIsIFwiQUxBTUFOQ0UgQ09VTlRZIE9GRklDRSBBTk5FWCBCVUlMRElORyAoQVVESVRPUklVTSlcIizigKZcbiQgc2RyICAgICAgICAgICAgICAgICAgICAgICAgPGNocj4gTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwg4oCmXG4kIG1haWxfdmVyaV9zdGF0dXMgICAgICAgICAgIDxjaHI+IE5BLCBOQSwgTkEsIE5BLCBOQSwgXCJWRVJJRklFRFwiLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwgTkEsIE5BLCBOQSwg4oCmXG4ifQ== -->
 <pre><code>Rows: 2,111,797
 Columns: 36
-$ county_desc                &lt;chr&gt; &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;A…
-$ voter_reg_num              &lt;chr&gt; &quot;000009019674&quot;, &quot;000009129589&quot;, &quot;000009021947&quot;, &quot;000009139919&quot;, &quot;000009068…
-$ ncid                       &lt;chr&gt; &quot;AA69747&quot;, &quot;AA170513&quot;, &quot;AA71983&quot;, &quot;AA178336&quot;, &quot;AA117728&quot;, &quot;AA200592&quot;, &quot;AA1…
-$ voter_last_name            &lt;chr&gt; &quot;AARON&quot;, &quot;AARON&quot;, &quot;AARON&quot;, &quot;ABBAS&quot;, &quot;ABBAS&quot;, &quot;ABBOT&quot;, &quot;ABBOTT&quot;, &quot;ABBOTT&quot;, …
-$ voter_first_name           &lt;chr&gt; &quot;CLAUDIA&quot;, &quot;JAMES&quot;, &quot;WILLIE&quot;, &quot;JENNIFER&quot;, &quot;RAFAT&quot;, &quot;SOPHIA&quot;, &quot;BEVERLY&quot;, &quot;B…
-$ voter_middle_name          &lt;chr&gt; &quot;HAYDEN&quot;, &quot;MICHAEL&quot;, &quot;DALE&quot;, &quot;ANN&quot;, NA, &quot;ELIZABETH&quot;, &quot;MUTER&quot;, &quot;CHRISTOPHER…
-$ race                       &lt;chr&gt; &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;ASIAN&quot;, &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;W…
-$ gender                     &lt;chr&gt; &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;,…
-$ age                        &lt;dbl&gt; 73, 70, 74, 38, 66, 25, 83, 25, 50, 74, 88, 35, 27, 67, 40, 74, 45, 24, 51…
-$ voter_street_address       &lt;chr&gt; &quot;1013  EDITH ST&quot;, &quot;5608  OLD CHEROKEE LN&quot;, &quot;1013  EDITH ST&quot;, &quot;3027  TRUITT…
-$ voter_city                 &lt;chr&gt; &quot;BURLINGTON&quot;, &quot;GRAHAM&quot;, &quot;BURLINGTON&quot;, &quot;BURLINGTON&quot;, &quot;BURLINGTON&quot;, &quot;BURLING…
-$ voter_state                &lt;chr&gt; &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;N…
-$ voter_zip                  &lt;dbl&gt; 27215, 27253, 27215, 27215, 27215, 27215, 27215, 27302, 27349, 27217, 2721…
-$ ballot_mail_street_address &lt;chr&gt; NA, NA, NA, &quot;FONTINVGEN 20&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ ballot_mail_city           &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-$ ballot_mail_state          &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-$ ballot_mail_zip            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-$ other_mail_addr1           &lt;chr&gt; NA, NA, NA, &quot;KUNGLV 44231&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-$ other_mail_addr2           &lt;chr&gt; NA, NA, NA, &quot;SWEDEN&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-$ other_city_state_zip       &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-$ election_dt                &lt;chr&gt; &quot;11/06/2018&quot;, &quot;11/06/2018&quot;, &quot;11/06/2018&quot;, &quot;11/06/2018&quot;, &quot;11/06/2018&quot;, &quot;11/…
-$ voter_party_code           &lt;chr&gt; &quot;UNA&quot;, &quot;DEM&quot;, &quot;UNA&quot;, &quot;DEM&quot;, &quot;DEM&quot;, &quot;DEM&quot;, &quot;REP&quot;, &quot;UNA&quot;, &quot;UNA&quot;, &quot;REP&quot;, &quot;REP…
-$ precinct_desc              &lt;chr&gt; &quot;BURLINGTON 4&quot;, &quot;NORTH NEWLIN&quot;, &quot;BURLINGTON 4&quot;, &quot;CENTRAL BOONE&quot;, &quot;SOUTH BO…
-$ cong_dist_desc             &lt;chr&gt; &quot;CONGRESSIONAL DISTRICT 6&quot;, &quot;CONGRESSIONAL DISTRICT 6&quot;, &quot;CONGRESSIONAL DIS…
-$ nc_house_desc              &lt;chr&gt; &quot;NC HOUSE DISTRICT 63&quot;, &quot;NC HOUSE DISTRICT 64&quot;, &quot;NC HOUSE DISTRICT 63&quot;, &quot;N…
-$ nc_senate_desc             &lt;chr&gt; &quot;NC SENATE DISTRICT 24&quot;, &quot;NC SENATE DISTRICT 24&quot;, &quot;NC SENATE DISTRICT 24&quot;,…
-$ ballot_req_delivery_type   &lt;chr&gt; &quot;IN PERSON&quot;, &quot;IN PERSON&quot;, &quot;IN PERSON&quot;, &quot;E-MAIL&quot;, &quot;IN PERSON&quot;, &quot;IN PERSON&quot;,…
-$ ballot_req_type            &lt;chr&gt; &quot;ONE-STOP&quot;, &quot;ONE-STOP&quot;, &quot;ONE-STOP&quot;, &quot;MAIL&quot;, &quot;ONE-STOP&quot;, &quot;ONE-STOP&quot;, &quot;ONE-S…
-$ ballot_request_party       &lt;chr&gt; &quot;UNA&quot;, &quot;DEM&quot;, &quot;UNA&quot;, &quot;DEM&quot;, &quot;DEM&quot;, &quot;DEM&quot;, &quot;REP&quot;, &quot;UNA&quot;, &quot;UNA&quot;, &quot;REP&quot;, &quot;REP…
-$ ballot_req_dt              &lt;chr&gt; &quot;11/01/2018&quot;, &quot;10/18/2018&quot;, &quot;10/17/2018&quot;, &quot;10/10/2018&quot;, &quot;10/26/2018&quot;, &quot;11/…
-$ ballot_send_dt             &lt;chr&gt; &quot;11/01/2018&quot;, &quot;10/18/2018&quot;, &quot;10/17/2018&quot;, &quot;10/11/2018&quot;, &quot;10/26/2018&quot;, &quot;11/…
-$ ballot_rtn_dt              &lt;chr&gt; &quot;11/01/2018&quot;, &quot;10/18/2018&quot;, &quot;10/17/2018&quot;, &quot;11/06/2018&quot;, &quot;10/26/2018&quot;, &quot;11/…
-$ ballot_rtn_status          &lt;chr&gt; &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;A…
-$ site_name                  &lt;chr&gt; &quot;HOLLY HILL MALL&quot;, &quot;ALAMANCE COUNTY OFFICE ANNEX BUILDING (AUDITORIUM)&quot;, &quot;…
-$ sdr                        &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-$ mail_veri_status           &lt;chr&gt; NA, NA, NA, NA, NA, &quot;VERIFIED&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</code></pre>
+$ county_desc                &lt;chr&gt; &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, &quot;ALAMANCE&quot;, …
+$ voter_reg_num              &lt;chr&gt; &quot;000009019674&quot;, &quot;000009129589&quot;, &quot;000009021947&quot;, &quot;000009139919&quot;, &quot;0000090…
+$ ncid                       &lt;chr&gt; &quot;AA69747&quot;, &quot;AA170513&quot;, &quot;AA71983&quot;, &quot;AA178336&quot;, &quot;AA117728&quot;, &quot;AA200592&quot;, &quot;A…
+$ voter_last_name            &lt;chr&gt; &quot;AARON&quot;, &quot;AARON&quot;, &quot;AARON&quot;, &quot;ABBAS&quot;, &quot;ABBAS&quot;, &quot;ABBOT&quot;, &quot;ABBOTT&quot;, &quot;ABBOTT&quot;…
+$ voter_first_name           &lt;chr&gt; &quot;CLAUDIA&quot;, &quot;JAMES&quot;, &quot;WILLIE&quot;, &quot;JENNIFER&quot;, &quot;RAFAT&quot;, &quot;SOPHIA&quot;, &quot;BEVERLY&quot;, …
+$ voter_middle_name          &lt;chr&gt; &quot;HAYDEN&quot;, &quot;MICHAEL&quot;, &quot;DALE&quot;, &quot;ANN&quot;, NA, &quot;ELIZABETH&quot;, &quot;MUTER&quot;, &quot;CHRISTOPH…
+$ race                       &lt;chr&gt; &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;ASIAN&quot;, &quot;WHITE&quot;, &quot;WHITE&quot;, &quot;WHITE&quot;, …
+$ gender                     &lt;chr&gt; &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M…
+$ age                        &lt;dbl&gt; 73, 70, 74, 38, 66, 25, 83, 25, 50, 74, 88, 35, 27, 67, 40, 74, 45, 24, …
+$ voter_street_address       &lt;chr&gt; &quot;1013  EDITH ST&quot;, &quot;5608  OLD CHEROKEE LN&quot;, &quot;1013  EDITH ST&quot;, &quot;3027  TRUI…
+$ voter_city                 &lt;chr&gt; &quot;BURLINGTON&quot;, &quot;GRAHAM&quot;, &quot;BURLINGTON&quot;, &quot;BURLINGTON&quot;, &quot;BURLINGTON&quot;, &quot;BURLI…
+$ voter_state                &lt;chr&gt; &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, &quot;NC&quot;, …
+$ voter_zip                  &lt;dbl&gt; 27215, 27253, 27215, 27215, 27215, 27215, 27215, 27302, 27349, 27217, 27…
+$ ballot_mail_street_address &lt;chr&gt; NA, NA, NA, &quot;FONTINVGEN 20&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ ballot_mail_city           &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+$ ballot_mail_state          &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+$ ballot_mail_zip            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+$ other_mail_addr1           &lt;chr&gt; NA, NA, NA, &quot;KUNGLV 44231&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+$ other_mail_addr2           &lt;chr&gt; NA, NA, NA, &quot;SWEDEN&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+$ other_city_state_zip       &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+$ election_dt                &lt;chr&gt; &quot;11/06/2018&quot;, &quot;11/06/2018&quot;, &quot;11/06/2018&quot;, &quot;11/06/2018&quot;, &quot;11/06/2018&quot;, &quot;1…
+$ voter_party_code           &lt;chr&gt; &quot;UNA&quot;, &quot;DEM&quot;, &quot;UNA&quot;, &quot;DEM&quot;, &quot;DEM&quot;, &quot;DEM&quot;, &quot;REP&quot;, &quot;UNA&quot;, &quot;UNA&quot;, &quot;REP&quot;, &quot;R…
+$ precinct_desc              &lt;chr&gt; &quot;BURLINGTON 4&quot;, &quot;NORTH NEWLIN&quot;, &quot;BURLINGTON 4&quot;, &quot;CENTRAL BOONE&quot;, &quot;SOUTH …
+$ cong_dist_desc             &lt;chr&gt; &quot;CONGRESSIONAL DISTRICT 6&quot;, &quot;CONGRESSIONAL DISTRICT 6&quot;, &quot;CONGRESSIONAL D…
+$ nc_house_desc              &lt;chr&gt; &quot;NC HOUSE DISTRICT 63&quot;, &quot;NC HOUSE DISTRICT 64&quot;, &quot;NC HOUSE DISTRICT 63&quot;, …
+$ nc_senate_desc             &lt;chr&gt; &quot;NC SENATE DISTRICT 24&quot;, &quot;NC SENATE DISTRICT 24&quot;, &quot;NC SENATE DISTRICT 24…
+$ ballot_req_delivery_type   &lt;chr&gt; &quot;IN PERSON&quot;, &quot;IN PERSON&quot;, &quot;IN PERSON&quot;, &quot;E-MAIL&quot;, &quot;IN PERSON&quot;, &quot;IN PERSON…
+$ ballot_req_type            &lt;chr&gt; &quot;ONE-STOP&quot;, &quot;ONE-STOP&quot;, &quot;ONE-STOP&quot;, &quot;MAIL&quot;, &quot;ONE-STOP&quot;, &quot;ONE-STOP&quot;, &quot;ONE…
+$ ballot_request_party       &lt;chr&gt; &quot;UNA&quot;, &quot;DEM&quot;, &quot;UNA&quot;, &quot;DEM&quot;, &quot;DEM&quot;, &quot;DEM&quot;, &quot;REP&quot;, &quot;UNA&quot;, &quot;UNA&quot;, &quot;REP&quot;, &quot;R…
+$ ballot_req_dt              &lt;chr&gt; &quot;11/01/2018&quot;, &quot;10/18/2018&quot;, &quot;10/17/2018&quot;, &quot;10/10/2018&quot;, &quot;10/26/2018&quot;, &quot;1…
+$ ballot_send_dt             &lt;chr&gt; &quot;11/01/2018&quot;, &quot;10/18/2018&quot;, &quot;10/17/2018&quot;, &quot;10/11/2018&quot;, &quot;10/26/2018&quot;, &quot;1…
+$ ballot_rtn_dt              &lt;chr&gt; &quot;11/01/2018&quot;, &quot;10/18/2018&quot;, &quot;10/17/2018&quot;, &quot;11/06/2018&quot;, &quot;10/26/2018&quot;, &quot;1…
+$ ballot_rtn_status          &lt;chr&gt; &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, &quot;ACCEPTED&quot;, …
+$ site_name                  &lt;chr&gt; &quot;HOLLY HILL MALL&quot;, &quot;ALAMANCE COUNTY OFFICE ANNEX BUILDING (AUDITORIUM)&quot;,…
+$ sdr                        &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+$ mail_veri_status           &lt;chr&gt; NA, NA, NA, NA, NA, &quot;VERIFIED&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Sentence 1:</p>
 <p>“Black voters were more than twice as likely to have mail-in ballots
 rejected than those submitted by the state’s white voters in 2018, and
 rejection rates for 2020 show a similar pattern, according to a new
 analysis by ProPublica and WRAL News.:’”</p>
+<p>This paragraph establishes a foundation for the entire investigation.
+It is clear that original data analysis by the reporters unearthed
+racial disparities in ballot rejection rates. This finding is key to
+understanding the study’s focus on systemic inequalities.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5OQ19yZWplY3RlZCA8LSBhYnNlbnN0ZWUgfD5cbiAgZmlsdGVyKGJhbGxvdF9ydG5fc3RhdHVzICE9IFwiQUNDRVBURURcIixcbiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSBcIk1BSUxcIikgfD5cbiAgZ3JvdXBfYnkocmFjZSl8PlxuICBzdW1tYXJpc2UoY291bnQgPSBuKCkpfD5cbmFycmFuZ2UoZGVzYyhjb3VudCkpXG5cbk5DX3RvdGFsX3JhY2UgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihiYWxsb3RfcmVxX3R5cGUgPT0gXCJNQUlMXCIpIHw+XG4gIGdyb3VwX2J5KHJhY2UpIHw+XG4gIHN1bW1hcmlzZShjb3VudCA9IG4oKSkgfD5cbmFycmFuZ2UoZGVzYyhjb3VudCkpXG4gIFxuTkNfcGVyY2VudF9yZWplY3RlZCA8LSBOQ190b3RhbF9yYWNlIHw+IGxlZnRfam9pbihOQ19yZWplY3RlZCwgam9pbl9ieShyYWNlKSkgfD5cbiAgcmVuYW1lKFxuICAgIHRvdGFsID0gY291bnQueCxcbiAgICByZWplY3RlZCA9IGNvdW50LnlcbiAgKSB8PlxuICBtdXRhdGUocGVyY2VudF9zcG9saWVkID0gKHJlamVjdGVkL3RvdGFsKSlcblxuYGBgIn0= -->
@@ -1894,47 +1869,58 @@ NC_percent_rejected &lt;- NC_total_race |&gt; left_join(NC_rejected, join_by(rac
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Sentence 2:</p>
 <p>“Moore County, which rejected about one-third of the 149 mail-in
 ballots returned by Black voters in 2018, says she was unaware that the
 ballot she sent in wasn’t counted.”</p>
+<p>This specific example illustrates a racial disparity in one of the
+most populous counties, revealing how data analysis spotlighted local
+discrepancies and used them as evidence of broader statewide
+patterns.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTW9vcmVfcmVqZWN0ZWQgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihjb3VudHlfZGVzYyA9PSBcIk1PT1JFXCIsXG4gICAgICAgICBiYWxsb3RfcnRuX3N0YXR1cyAhPSBcIkFDQ0VQVEVEXCIsXG4gICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gXCJNQUlMXCIpIHw+XG4gIGdyb3VwX2J5KHJhY2UpIHw+XG4gIHN1bW1hcmlzZShyZWplY3RlZF9jb3VudCA9IG4oKSlcblxuTW9vcmVfdG90YWwgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihjb3VudHlfZGVzYyA9PSBcIk1PT1JFXCIsXG4gICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gXCJNQUlMXCIpIHw+XG4gIGdyb3VwX2J5KHJhY2UpIHw+XG4gIHN1bW1hcmlzZSh0b3RhbF9jb3VudCA9IG4oKSlcblxuXG5Nb29yZV9yYXRlcyA8LSBNb29yZV90b3RhbCB8PlxuICBsZWZ0X2pvaW4oR3VpbGZvcmRfcmVqZWN0ZWQsIGJ5ID0gXCJyYWNlXCIpIHw+XG4gIG11dGF0ZShyZWplY3RlZF9jb3VudCA9IHJlcGxhY2VfbmEocmVqZWN0ZWRfY291bnQsIDApLFxuICAgICAgICAgcmVqZWN0aW9uX3JhdGUgPSAocmVqZWN0ZWRfY291bnQgLyB0b3RhbF9jb3VudCkgKiAxMDApXG5cbk1vb3JlX3JhdGVzXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTW9vcmVfcmVqZWN0ZWQgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihjb3VudHlfZGVzYyA9PSBcIk1PT1JFXCIsXG4gICAgICAgICBiYWxsb3RfcnRuX3N0YXR1cyAhPSBcIkFDQ0VQVEVEXCIsXG4gICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gXCJNQUlMXCIsXG4gICAgICAgICApIHw+XG4gIGdyb3VwX2J5KHJhY2UpIHw+XG4gIHN1bW1hcmlzZShyZWplY3RlZF9jb3VudCA9IG4oKSlcblxuTW9vcmVfdG90YWwgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihjb3VudHlfZGVzYyA9PSBcIk1PT1JFXCIsXG4gICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gXCJNQUlMXCIsXG4gICAgICAgICkgfD5cbiAgZ3JvdXBfYnkocmFjZSkgfD5cbiAgc3VtbWFyaXNlKHRvdGFsX2NvdW50ID0gbigpKVxuXG5cbk1vb3JlX3JhdGVzIDwtIE1vb3JlX3RvdGFsIHw+XG4gIGxlZnRfam9pbihNb29yZV9yZWplY3RlZCwgYnkgPSBcInJhY2VcIikgfD5cbiAgbXV0YXRlKHJlamVjdGVkX2NvdW50ID0gcmVwbGFjZV9uYShyZWplY3RlZF9jb3VudCwgMCksXG4gICAgICAgICByZWplY3Rpb25fcmF0ZSA9IChyZWplY3RlZF9jb3VudCAvIHRvdGFsX2NvdW50KSAqIDEwMClcblxuTW9vcmVfcmF0ZXNcbmBgYCJ9 -->
 <pre class="r"><code>Moore_rejected &lt;- absenstee |&gt;
   filter(county_desc == &quot;MOORE&quot;,
          ballot_rtn_status != &quot;ACCEPTED&quot;,
-         ballot_req_type == &quot;MAIL&quot;) |&gt;
+         ballot_req_type == &quot;MAIL&quot;,
+         ) |&gt;
   group_by(race) |&gt;
   summarise(rejected_count = n())
 
 Moore_total &lt;- absenstee |&gt;
   filter(county_desc == &quot;MOORE&quot;,
-         ballot_req_type == &quot;MAIL&quot;) |&gt;
+         ballot_req_type == &quot;MAIL&quot;,
+        ) |&gt;
   group_by(race) |&gt;
   summarise(total_count = n())
 
 
 Moore_rates &lt;- Moore_total |&gt;
-  left_join(Guilford_rejected, by = &quot;race&quot;) |&gt;
+  left_join(Moore_rejected, by = &quot;race&quot;) |&gt;
   mutate(rejected_count = replace_na(rejected_count, 0),
          rejection_rate = (rejected_count / total_count) * 100)
 
 Moore_rates</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NywibmNvbCI6NCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI3IMOXIDQiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMjFReTByRFFCU2Rwa21MOVlIRmxic28zV2tyUGdvcUNCbmJxTUUybFRTK05rcE14MXFOU1ptbTZ0S1YrQWN1M2J2eER3UmRkdWZYaUFqV08zRkdTbkRnenR4NzVweTVkNDVWUGxqTUhHUVFRa2treXdtVVZDQkZ5cTY5a1Y5R1NKYWdTQ0FaRGJIekJrZ1RrTWdRNHhCcGZxSGd1b0ZOWGt5dVYzQnBXdzJvaWpjc280Uk5GVmYxS09FRTFUREx4Z0FjVVN1NHZvMVZFOXZHbmk1ZXJkbGJ1c1dMckwxZlk4UnF6ZEpWQzVmME9yOFkyVFhMZXQzWUJLbGVGc3I5TGNQV0lSbU5oa1FvQjlHRFNFRVVHUUZpRlVwM2dMTUNIM3pnbkJ3L3B4Q1M3dUVjWXh6TjdUMnhwYlhtN3ZieWo4L2FJWXFXdHZNMWMvTmFuTmFPZUYyaGIwc2Zzem10OUo0ZWZsbkx4bHhVZk9lU2RMaURNZ2RsNnJpRTU4TmhFRHJlc1J0MC9aQkRZNVNjRXpja2pmL1FWdUFmVXlja3NUNUROTGd1aUY3c2s5SXRiUDErL3pNK2tPczVIVEdRQURNTkozUUtweFQwVUgzSEpPbWd6ZHFDU0pyZ1ZnMktFelFHakhkOU5ra2o3NTUxL1l2OHduenNQdG4ybTZ4cEJQMnVVWjZuQjNMNWR3eXB6K1VwTGs4UnY5bnloWCtLNTV3UVQ3emNJRmQvZGdYWGtSK0ZObTM5bVpnQnRGT0lMQmVJRzNnQ2liNk92bjhBTk9OSUx5VURBQUE9In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NywibmNvbCI6NCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI3IMOXIDQiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMjFSVFV2RFFCQ2R0a210OVJ0UGdvY0lYankwaU1VaVlpVnJHMjNRcHBER2o1dkVkTlZxVEVxYVdvLytBbitJNE1HL29ZZ0hyOTY4ZWhjUFdtZmpycFRna3BmTXZKMjNNL3RpVmc0SzJZTXNBS1JBa2hLUWtqRUVlZGZhekswQVNFbE1FaURCTVB0ZVlkRTBCaEppRWpIRU4yVFMwSW5CazVtTkhWTGVWdnhBSVp1bVhpYUdRbXBhRlBBQ1JUY3ErZ0FkbGU2UXhqWlJER0xwZTVvNHRXNVZOWk1uVTlaK25SWFc2cWFtbUtTc05makc2SzVSMFJyNkZrcTFpbER1VjNWTHcyQXNHaEpnSHZHQVNDT1dXUUZpRlZObm9DYURLRVczQlppQTM4WHFYaERqckVZdHJyemQ0S091TDkyN1g3MDVkZkUyV3VwYXJkcDV2M3ZqR2xEblNvK1psOWQ3ZGVINXN2ZzAreEZ6VWZic0M5cmhEa3FjbEFMYm9Ud2VDZjNRZGc4ZHYrdUZuQm9QNkJsMVF0cjhqMjM1M21GZ2h6VFdaemp3ZTNuUmkxMHllWTJ2ZnIvL0dSL0ljZTJPR0VpUTJhWWQydm5qQVBXWWZjY2tRMzZidFVWUmNwcmJPaWhPQkRGaXN1dXhTWm81NTdUcm5lY0toZGgrcXUyZHNLYmNmdUFUSi9pdkViSDBPMGF5eitWcExrOVQ3NlRsQ2Y5azF6Nmlyamk1U1MvLzdQSjdrUi81ZHRENk16R0xiQ2NmV1M0WXgzY0ZFMTBkdm44QU1lTEU3U1VEQUFBPSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["race"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total_count"],"name":[2],"type":["int"],"align":["right"]},{"label":["rejected_count"],"name":[3],"type":["int"],"align":["right"]},{"label":["rejection_rate"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"ASIAN","2":"36","3":"57","4":"158.33333"},{"1":"BLACK or AFRICAN AMERICAN","2":"202","3":"407","4":"201.48515"},{"1":"INDIAN AMERICAN or ALASKA NATIVE","2":"6","3":"6","4":"100.00000"},{"1":"OTHER","2":"53","3":"36","4":"67.92453"},{"1":"TWO or MORE RACES","2":"5","3":"6","4":"120.00000"},{"1":"UNDESIGNATED","2":"58","3":"33","4":"56.89655"},{"1":"WHITE","2":"1635","3":"648","4":"39.63303"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
+{"columns":[{"label":["race"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total_count"],"name":[2],"type":["int"],"align":["right"]},{"label":["rejected_count"],"name":[3],"type":["int"],"align":["right"]},{"label":["rejection_rate"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"ASIAN","2":"36","3":"8","4":"22.22222"},{"1":"BLACK or AFRICAN AMERICAN","2":"202","3":"61","4":"30.19802"},{"1":"INDIAN AMERICAN or ALASKA NATIVE","2":"6","3":"1","4":"16.66667"},{"1":"OTHER","2":"53","3":"15","4":"28.30189"},{"1":"TWO or MORE RACES","2":"5","3":"0","4":"0.00000"},{"1":"UNDESIGNATED","2":"58","3":"5","4":"8.62069"},{"1":"WHITE","2":"1635","3":"211","4":"12.90520"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Sentence 3:</p>
 <p>“Guilford County, the third-most populous county in North Carolina,
 rejected the largest number of mail-in ballots by Black voters
 statewide: 177. The rejection rate for Black voters, at 16.5%, was three
 times as high as the rejection rate for white voters, 5.5%, putting the
 county largely in line with the rest of the state in 2018.”</p>
+<p>This paragraph shows the continuity of the trend, linking current
+data to the same issues observed in 2018. It confirms that disparities
+persist.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuR3VpbGZvcmRfcmVqZWN0ZWQgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihjb3VudHlfZGVzYyA9PSBcIkdVSUxGT1JEXCIsXG4gICAgICAgICBiYWxsb3RfcnRuX3N0YXR1cyAhPSBcIkFDQ0VQVEVEXCIsXG4gICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gXCJNQUlMXCIpIHw+XG4gIGdyb3VwX2J5KHJhY2UpIHw+XG4gIHN1bW1hcmlzZShyZWplY3RlZF9jb3VudCA9IG4oKSlcblxuR3VpbGZvcmRfdG90YWwgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihjb3VudHlfZGVzYyA9PSBcIkdVSUxGT1JEXCIsXG4gICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gXCJNQUlMXCIpIHw+XG4gIGdyb3VwX2J5KHJhY2UpIHw+XG4gIHN1bW1hcmlzZSh0b3RhbF9jb3VudCA9IG4oKSlcblxuXG5HdWlsZm9yZF9yYXRlcyA8LSBHdWlsZm9yZF90b3RhbCB8PlxuICBsZWZ0X2pvaW4oR3VpbGZvcmRfcmVqZWN0ZWQsIGJ5ID0gXCJyYWNlXCIpIHw+XG4gIG11dGF0ZShyZWplY3RlZF9jb3VudCA9IHJlcGxhY2VfbmEocmVqZWN0ZWRfY291bnQsIDApLFxuICAgICAgICAgcmVqZWN0aW9uX3JhdGUgPSAocmVqZWN0ZWRfY291bnQgLyB0b3RhbF9jb3VudCkgKiAxMDApXG5cbkd1aWxmb3JkX3JhdGVzXG5gYGAifQ== -->
@@ -1959,7 +1945,7 @@ Guilford_rates &lt;- Guilford_total |&gt;
 
 Guilford_rates</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NywibmNvbCI6NCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI3IMOXIDQiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBd3R5aVREbWl1QmlZR0JnWm1CaFlXUmdaZ1V5R1ZoRFE5eDBMUmdZV0ppQUhFWUdGZ1pPRUYwQlZDUU1aTEFBc1FBUXMwTWxXQjJEUFIzOW9CeEpKeDlIWjIrRi9DSUZSN2NnVDJkSFB3VkhYMWN3QTZwQXdkUFB4Uk5KR0t6VXh6SFkyMUhCenpIRU04d1ZacXAvaUlkckVKUWpHQkx1RDFMbzZ4L2txaERrNk93YURKWGdDZlZ6Y1EzMmRBZHFkWFdCNlF6MzhBeHhCVEo0d1k1a1lQak53TUJtQ0tSRmdYZ3hFSnNDUFJQS3dDQ3lFVW1OSlZCc09wQm1BMklWS0szSXdNRFVBYVQ1UUdvY3pMWjI3MXBxcGVSZ3VYYkJscWVSU3h4c0pubXFBSkdEbWVpZjJ3K21IWE5RVzJMNUxleGpzNE55MUxXdGE3T2pIVFRLSzd6bW5ROUZDMFhXdk1UYzFHSm9DTEpBQlZtS0VwTlRvV3p1a3Z5U3hKejQ1UHpTdkJLb0VGOVJhbFpxY2tscUNqYlJ6UHk4K0tMRWtsUTBlemlMOHN2MVlIYUJQTW5VQUNUKy8vLy9FOTFCeVRtSnhUQUh3UVM1VWhKTEV2WFNpb0Q2Z2J4L2FGclk4d3RBMWdJMU1RbERnd3BaTTJNUm1vQkFhUjdJSlNtNnlSbWxlZG02Umtabzhzd0ZlZWtnUzhGQ0VNQUxaYk1qc1ZrZ3ptRDZEOVhPQnRYT2xwcVhucGtIQ3ovV25NU2sxQnlZeVNtcFpmRGd5aThIaDRkZVFWRW1QQkM1Z0tMRmV1QWdoNGtrNStmQVJNQmVaL2dIQU04YzhiVWxBd0FBIn0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NywibmNvbCI6NCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI3IMOXIDQiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBd3R5aVREbWl1QmlZR0JnWm1CaFlXUmdaZ1V5R1ZoRFE5eDBMUmdZV0ppQUhFWUdGZ1pPRUYwQlZDUU1aTEFBc1FBUXMwTWxXQjJEUFIzOW9CeEpKeDlIWjIrRi9DSUZSN2NnVDJkSFB3VkhYMWN3QTZwQXdkUFB4Uk5KR0t6VXh6SFkyMUhCenpIRU04d1ZacXAvaUlkckVKUWpHQkx1RDFMbzZ4L2txaERrNk93YURKWGdDZlZ6Y1EzMmRBZHFkWFdCNlF6MzhBeHhCVEo0d1k1a1lQak53TUJtQ0tSRmdYZ3hFSnNDUFJQS3dDQ3lFVW1OSlZCc09wQm1BMklWS0szSXdNRFVBYVQ1UUdvY3pMWjI3MXBxcGVSZ3VYYkJscWVSU3h4c0pubXFBSkdEbWVpZjJ3K21IWE5RVzJMNUxleGpzNE55MUxXdGE3T2pIVFRLSzd6bW5ROUZDMFhXdk1UYzFHSm9DTEpBQlZtS0VwTlRvV3p1a3Z5U3hKejQ1UHpTdkJLb0VGOVJhbFpxY2tscUNqYlJ6UHk4K0tMRWtsUTBlemlMOHN2MVlIYUJQTW5VQUNUKy8vLy9FOTFCeVRtSnhUQUh3UVM1VWhKTEV2WFNpb0Q2Z2J4L2FGclk4d3RBMWdJMU1RbERnd3BaTTJNUm1vQkFhUjdJSlNtNnlSbWxlZG02eGlabzhzd0ZlZWtnUzhGQ0VNQUxaYk1qc1ZrZ3ptRDZEOVhPQnRYT2xwcVhucGtIQ3ovV25NU2sxQnlZeVNtcFpmRGd5aThIaDRkZVFWRW1QQkM1Z0tMRmV1QWdoNGtrNStmQVJNQmVaL2dIQUxtTldhY2xBd0FBIn0= -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["race"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total_count"],"name":[2],"type":["int"],"align":["right"]},{"label":["rejected_count"],"name":[3],"type":["int"],"align":["right"]},{"label":["rejection_rate"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"ASIAN","2":"251","3":"57","4":"22.709163"},{"1":"BLACK or AFRICAN AMERICAN","2":"1585","3":"407","4":"25.678233"},{"1":"INDIAN AMERICAN or ALASKA NATIVE","2":"21","3":"6","4":"28.571429"},{"1":"OTHER","2":"163","3":"36","4":"22.085890"},{"1":"TWO or MORE RACES","2":"53","3":"6","4":"11.320755"},{"1":"UNDESIGNATED","2":"341","3":"33","4":"9.677419"},{"1":"WHITE","2":"5297","3":"648","4":"12.233340"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
@@ -1973,42 +1959,66 @@ NA</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Sentence 4:</p>
 <p>“The analysis by ProPublica and WRAL News shows 40% of rejected
 ballots were submitted by voters who identify as Black or African
 American, Indian American or Alaska Native, Asian, two or more races, or
 other.”</p>
+<p>By analyzing multiple demographic groups, the reporters’ work reveals
+that minority groups disproportionately face mail-in ballot rejections,
+showing the broad scope of the problem.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkNfcmVqZWN0ZWQgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihiYWxsb3RfcnRuX3N0YXR1cyAhPSBcIkFDQ0VQVEVEXCIsXG4gICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gXCJNQUlMXCIpIHw+XG4gIGdyb3VwX2J5KHJhY2UpfD5cbiAgc3VtbWFyaXNlKGNvdW50ID0gbigpKXw+XG5hcnJhbmdlKGRlc2MoY291bnQpKVxuXG5OQ190b3RhbF9yYWNlIDwtIGFic2Vuc3RlZSB8PlxuICBmaWx0ZXIoYmFsbG90X3JlcV90eXBlID09IFwiTUFJTFwiKSB8PlxuICBncm91cF9ieShyYWNlKSB8PlxuICBzdW1tYXJpc2UoY291bnQgPSBuKCkpIHw+XG5hcnJhbmdlKGRlc2MoY291bnQpKVxuICBcbk5DX3BlcmNlbnRfcmVqZWN0ZWQgPC0gTkNfdG90YWxfcmFjZSB8PiBsZWZ0X2pvaW4oTkNfcmVqZWN0ZWQsIGpvaW5fYnkocmFjZSkpIHw+XG4gIHJlbmFtZShcbiAgICB0b3RhbCA9IGNvdW50LngsXG4gICAgcmVqZWN0ZWQgPSBjb3VudC55XG4gICkgfD5cbiAgbXV0YXRlKHBlcmNlbnRfc3BvbGllZCA9IChyZWplY3RlZC90b3RhbCkpXG5gYGAifQ== -->
-<pre class="r"><code>NC_rejected &lt;- absenstee |&gt;
-  filter(ballot_rtn_status != &quot;ACCEPTED&quot;,
-         ballot_req_type == &quot;MAIL&quot;) |&gt;
-  group_by(race)|&gt;
-  summarise(count = n())|&gt;
-arrange(desc(count))
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkNfcmVqZWN0ZWRfdG90YWwgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihiYWxsb3RfcnRuX3N0YXR1cyAhPSBcIkFDQ0VQVEVEXCIpIHw+XG4gIHN1bW1hcmlzZShjb3VudCA9IG4oKSlcblxuTkNfcmVqZWN0ZWRfbm9ud2hpdGUgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihiYWxsb3RfcnRuX3N0YXR1cyAhPSBcIkFDQ0VQVEVEXCIsXG4gICAgICAgICByYWNlICE9IFwiV0hJVEVcIikgfD5cbiAgc3VtbWFyaXNlKGNvdW50ID0gbigpKVxuXG5OQ19yZWplY3RlZF9yYXRpbyA8LSBiaW5kX2NvbHMoTkNfcmVqZWN0ZWRfbm9ud2hpdGUsIE5DX3JlamVjdGVkX3RvdGFsKSB8PlxuICBjbGVhbl9uYW1lcygpIHw+XG4gIHJlbmFtZShcbiAgICBub253aGl0ZSA9IGNvdW50XzEsXG4gICAgdG90YWwgPSBjb3VudF8yXG4gICkgfD5cbiAgbXV0YXRlKG5vbndoaXRlX3JlamVjdGVkID0gKG5vbndoaXRlL3RvdGFsKSoxMDApXG5gYGAifQ== -->
+<pre class="r"><code>NC_rejected_total &lt;- absenstee |&gt;
+  filter(ballot_rtn_status != &quot;ACCEPTED&quot;) |&gt;
+  summarise(count = n())
 
-NC_total_race &lt;- absenstee |&gt;
-  filter(ballot_req_type == &quot;MAIL&quot;) |&gt;
-  group_by(race) |&gt;
-  summarise(count = n()) |&gt;
-arrange(desc(count))
-  
-NC_percent_rejected &lt;- NC_total_race |&gt; left_join(NC_rejected, join_by(race)) |&gt;
+NC_rejected_nonwhite &lt;- absenstee |&gt;
+  filter(ballot_rtn_status != &quot;ACCEPTED&quot;,
+         race != &quot;WHITE&quot;) |&gt;
+  summarise(count = n())
+
+NC_rejected_ratio &lt;- bind_cols(NC_rejected_nonwhite, NC_rejected_total) |&gt;
+  clean_names() |&gt;
   rename(
-    total = count.x,
-    rejected = count.y
+    nonwhite = count_1,
+    total = count_2
   ) |&gt;
-  mutate(percent_spolied = (rejected/total))</code></pre>
+  mutate(nonwhite_rejected = (nonwhite/total)*100)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTmV3IG5hbWVzOlxu4oCiIGBjb3VudGAgLT4gYGNvdW50Li4uMWBcbuKAoiBgY291bnRgIC0+IGBjb3VudC4uLjJgXG4ifQ== -->
+<pre><code>New names:
+• `count` -&gt; `count...1`
+• `count` -&gt; `count...2`</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkNfcmVqZWN0ZWRfcmF0aW9cbmBgYCJ9 -->
+<pre class="r"><code>NC_rejected_ratio</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Mywic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIMOXIDMiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFRdTA3RE1CUzlpWk5BSWxFVjhRTnNUTEdFWUdCa3FCZ1pVSkc2VlNZeGFTRFlrZU1TMlBnS2ZvTS9iSHZ0MklCc3lmYTVqM01mNTJHeHVpcFdCUUFRU0pJSVNJb1Ewc2ZsWFhrRGtNUm9SSkJBYnY0UFREcXptUUFuTmdEbjlBL2ZYK0EvTS9oMjhmMzVNK1pOVUNBVjdJMFBDT1pUTytzOEZsS01tMVp6bjZTbFpwMHpUbjF3cmZnTHJ6U3ZnNUs1a2lQMVpjMGM4UmMrZXp4aDc2cGpnKy90blVYTk5LUFBDdmxvN1FMS2tleDFLd1dTWXJOMUZwQWpGVGptVzJFbXFjdHFzeFd2NWZWbEVDZTlhRXpUU1MxN25ITDJla3ltTWVLOW8yZU9ubkhSdE9KWHBvNDljUzhUcWZtN2d6TVV4T3BCZTlVSzdSZEY3MEQvSzF0VXN2TWV1enJzRGlTKzE2d0xBZ0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["nonwhite"],"name":[1],"type":["int"],"align":["right"]},{"label":["total"],"name":[2],"type":["int"],"align":["right"]},{"label":["nonwhite_rejected"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"8238","2":"20007","3":"41.17559"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbk5BXG5gYGAifQ== -->
+<pre class="r"><code>NA
+NA</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Sentence 5:</p>
 <p>“The disparity holds for rural counties as well as urban ones, in
 areas dominated by Republican voters and Democratic voters alike. In
 largely urban Wake County, for example, the rejection rate for ballots
 cast by Black voters is twice that of ballots cast by white voters.”</p>
+<p>This finding highlights the geographical range of the problem and how
+racial disparities in mail-in ballot rejection extend across various
+political landscapes.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV2FrZV9yZWplY3RlZCA8LSBhYnNlbnN0ZWUgfD5cbiAgZmlsdGVyKGNvdW50eV9kZXNjID09IFwiV0FLRVwiLFxuICAgICAgICAgYmFsbG90X3J0bl9zdGF0dXMgIT0gXCJBQ0NFUFRFRFwiLFxuICAgICAgICAgYmFsbG90X3JlcV90eXBlID09IFwiTUFJTFwiKSB8PlxuICBncm91cF9ieShyYWNlKSB8PlxuICBzdW1tYXJpc2UocmVqZWN0ZWRfY291bnQgPSBuKCkpXG5cbldha2VfdG90YWwgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihjb3VudHlfZGVzYyA9PSBcIldBS0VcIixcbiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSBcIk1BSUxcIikgfD5cbiAgZ3JvdXBfYnkocmFjZSkgfD5cbiAgc3VtbWFyaXNlKHRvdGFsX2NvdW50ID0gbigpKVxuXG5cbldha2VfcmF0ZXMgPC0gV2FrZV90b3RhbCB8PlxuICBsZWZ0X2pvaW4oV2FrZV9yZWplY3RlZCwgYnkgPSBcInJhY2VcIikgfD5cbiAgbXV0YXRlKHJlamVjdGVkX2NvdW50ID0gcmVwbGFjZV9uYShyZWplY3RlZF9jb3VudCwgMCksXG4gICAgICAgICByZWplY3Rpb25fcmF0ZSA9IChyZWplY3RlZF9jb3VudCAvIHRvdGFsX2NvdW50KSAqIDEwMClcblxuV2FrZV9yYXRlc1xuXG5cblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV2FrZV9yZWplY3RlZCA8LSBhYnNlbnN0ZWUgfD5cbiAgZmlsdGVyKGNvdW50eV9kZXNjID09IFwiV0FLRVwiLFxuICAgICAgICAgYmFsbG90X3J0bl9zdGF0dXMgIT0gXCJBQ0NFUFRFRFwiLFxuICAgICAgICAgYmFsbG90X3JlcV90eXBlID09IFwiTUFJTFwiKSB8PlxuICBncm91cF9ieShyYWNlKSB8PlxuICBzdW1tYXJpc2UocmVqZWN0ZWRfY291bnQgPSBuKCkpXG5cbldha2VfdG90YWwgPC0gYWJzZW5zdGVlIHw+XG4gIGZpbHRlcihjb3VudHlfZGVzYyA9PSBcIldBS0VcIixcbiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSBcIk1BSUxcIikgfD5cbiAgZ3JvdXBfYnkocmFjZSkgfD5cbiAgc3VtbWFyaXNlKHRvdGFsX2NvdW50ID0gbigpKVxuXG5cbldha2VfcmF0ZXMgPC0gV2FrZV90b3RhbCB8PlxuICBsZWZ0X2pvaW4oV2FrZV9yZWplY3RlZCwgYnkgPSBcInJhY2VcIikgfD5cbiAgbXV0YXRlKHJlamVjdGVkX2NvdW50ID0gcmVwbGFjZV9uYShyZWplY3RlZF9jb3VudCwgMCksXG4gICAgICAgICByZWplY3Rpb25fcmF0ZSA9IChyZWplY3RlZF9jb3VudCAvIHRvdGFsX2NvdW50KSAqIDEwMClcblxuV2FrZV9yYXRlc1xuYGBgIn0= -->
 <pre class="r"><code>Wake_rejected &lt;- absenstee |&gt;
   filter(county_desc == &quot;WAKE&quot;,
          ballot_rtn_status != &quot;ACCEPTED&quot;,
@@ -2028,12 +2038,23 @@ Wake_rates &lt;- Wake_total |&gt;
   mutate(rejected_count = replace_na(rejected_count, 0),
          rejection_rate = (rejected_count / total_count) * 100)
 
-Wake_rates
-</code></pre>
+Wake_rates</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NywibmNvbCI6NCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI3IMOXIDQiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBd3R5aVREbWl1QmlZR0JnWm1CaFlXUmdaZ1V5R1ZoRFE5eDBMUmdZV0ppQUhFWUdGZ1pPRUYwQlZDUU1aTEFBc1FBUXMwTWxXQjJEUFIzOW9CeEpKeDlIWjIrRi9DSUZSN2NnVDJkSFB3VkhYMWN3QTZwQXdkUFB4Uk5KR0t6VXh6SFkyMUhCenpIRU04d1ZacXAvaUlkckVKUWpHQkx1RDFMbzZ4L2txaERrNk93YURKWGdDZlZ6Y1EzMmRBZHFkWFdCNlF6MzhBeHhCVEo0d1k1a1lPbG1ZT0FNQUxMdGdSN2dBTkxYZ0dJZERBeU84eEJxR0xZd01ERHhBMmx1SUc0Rlloa2duZ1NVV2dPaytVQnFIUFMraEdiSXZ0L21ZQ2JOWDliejZMU0RZZW4xV0NCeU1GUmU4RGNtbnRsQlMxdGdmOXFEcHc2YU9zcitSWWRNSGRTVGJEcHlxMCtnaFNKclhtSnVhakUwQkZtZ2dpeEZpY21wVURaM1NYNUpZazU4Y241cFhnbFVpSzhvTlNzMXVTUTFCWnRvWm41ZWZGRmlTU3FhUFp4RitlVjZNTHRBbm1ScUFCTC8vLy8vaWU2ZzVKekVZcGlEWUlKY0tZa2xpWHBwUlVEOVFONC9OQzNzK1FVZ2E0R2FtRURwZ1ExTk0yTVJtb0JBYVI3SUpTbTZ5Um1sZWRtNkprWm84c3dGZWVrZ1M4RkNFTUFMWmJNanNWa2d6bUQ2RDlYT0J0WE9scHFYbnBrSEN6L1duTVNrMUJ5WXlTbXBaZkRneWk4SGg0ZGVRVkVtUEJDNWdLTEZldUFnaDRrazUrZkFSTUJlWi9nSEFBR2VkNlFsQXdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["race"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total_count"],"name":[2],"type":["int"],"align":["right"]},{"label":["rejected_count"],"name":[3],"type":["int"],"align":["right"]},{"label":["rejection_rate"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"ASIAN","2":"1163","3":"180","4":"15.47721"},{"1":"BLACK or AFRICAN AMERICAN","2":"2384","3":"527","4":"22.10570"},{"1":"INDIAN AMERICAN or ALASKA NATIVE","2":"63","3":"11","4":"17.46032"},{"1":"OTHER","2":"776","3":"133","4":"17.13918"},{"1":"TWO or MORE RACES","2":"214","3":"28","4":"13.08411"},{"1":"UNDESIGNATED","2":"1160","3":"146","4":"12.58621"},{"1":"WHITE","2":"16798","3":"1964","4":"11.69187"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbk5BXG5OQVxuYGBgIn0= -->
+<pre class="r"><code>NA
+NA
+NA</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCgpgYGB7cn0KIyBsb2FkIHRoZSB0aWR5dmVyc2UKb3B0aW9ucyhzY2lwZW49OTk5KQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShsdWJyaWRhdGUpCmxpYnJhcnkoamFuaXRvcikKbGlicmFyeShyZWZpbnIpCmBgYAoKYGBge3J9CmFic2Vuc3RlZTwtIHJlYWRfY3N2KCJkYXRhL2Fic2VudGVlXzIwMTgxMTA2LmNzdiIpCmBgYApgYGB7cn0KCmBgYAoKYGBge3J9CmFic2VudGVlIDwtIGFic2Vuc3RlZSB8PgogIGNsZWFuX25hbWVzKCkKCmdsaW1wc2UoYWJzZW5zdGVlKQpgYGAKCgrigJxCbGFjayB2b3RlcnMgd2VyZSBtb3JlIHRoYW4gdHdpY2UgYXMgbGlrZWx5IHRvIGhhdmUgbWFpbC1pbiBiYWxsb3RzIHJlamVjdGVkIHRoYW4gdGhvc2Ugc3VibWl0dGVkIGJ5IHRoZSBzdGF0ZeKAmXMgd2hpdGUgdm90ZXJzIGluIDIwMTgsIGFuZCByZWplY3Rpb24gcmF0ZXMgZm9yIDIwMjAgc2hvdyBhIHNpbWlsYXIgcGF0dGVybiwgYWNjb3JkaW5nIHRvIGEgbmV3IGFuYWx5c2lzIGJ5IFByb1B1YmxpY2EgYW5kIFdSQUwgTmV3cy464oCZ4oCdCgpgYGB7cn0KCk5DX3JlamVjdGVkIDwtIGFic2Vuc3RlZSB8PgogIGZpbHRlcihiYWxsb3RfcnRuX3N0YXR1cyAhPSAiQUNDRVBURUQiLAogICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gIk1BSUwiKSB8PgogIGdyb3VwX2J5KHJhY2UpfD4KICBzdW1tYXJpc2UoY291bnQgPSBuKCkpfD4KYXJyYW5nZShkZXNjKGNvdW50KSkKCk5DX3RvdGFsX3JhY2UgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGJhbGxvdF9yZXFfdHlwZSA9PSAiTUFJTCIpIHw+CiAgZ3JvdXBfYnkocmFjZSkgfD4KICBzdW1tYXJpc2UoY291bnQgPSBuKCkpIHw+CmFycmFuZ2UoZGVzYyhjb3VudCkpCiAgCk5DX3BlcmNlbnRfcmVqZWN0ZWQgPC0gTkNfdG90YWxfcmFjZSB8PiBsZWZ0X2pvaW4oTkNfcmVqZWN0ZWQsIGpvaW5fYnkocmFjZSkpIHw+CiAgcmVuYW1lKAogICAgdG90YWwgPSBjb3VudC54LAogICAgcmVqZWN0ZWQgPSBjb3VudC55CiAgKSB8PgogIG11dGF0ZShwZXJjZW50X3Nwb2xpZWQgPSAocmVqZWN0ZWQvdG90YWwpKQoKYGBgCuKAnE1vb3JlIENvdW50eSwgd2hpY2ggcmVqZWN0ZWQgYWJvdXQgb25lLXRoaXJkIG9mIHRoZSAxNDkgbWFpbC1pbiBiYWxsb3RzIHJldHVybmVkIGJ5IEJsYWNrIHZvdGVycyBpbiAyMDE4LCBzYXlzIHNoZSB3YXMgdW5hd2FyZSB0aGF0IHRoZSBiYWxsb3Qgc2hlIHNlbnQgaW4gd2FzbuKAmXQgY291bnRlZC7igJ0KYGBge3J9Ck1vb3JlX3JlamVjdGVkIDwtIGFic2Vuc3RlZSB8PgogIGZpbHRlcihjb3VudHlfZGVzYyA9PSAiTU9PUkUiLAogICAgICAgICBiYWxsb3RfcnRuX3N0YXR1cyAhPSAiQUNDRVBURUQiLAogICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gIk1BSUwiKSB8PgogIGdyb3VwX2J5KHJhY2UpIHw+CiAgc3VtbWFyaXNlKHJlamVjdGVkX2NvdW50ID0gbigpKQoKTW9vcmVfdG90YWwgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGNvdW50eV9kZXNjID09ICJNT09SRSIsCiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSAiTUFJTCIpIHw+CiAgZ3JvdXBfYnkocmFjZSkgfD4KICBzdW1tYXJpc2UodG90YWxfY291bnQgPSBuKCkpCgoKTW9vcmVfcmF0ZXMgPC0gTW9vcmVfdG90YWwgfD4KICBsZWZ0X2pvaW4oR3VpbGZvcmRfcmVqZWN0ZWQsIGJ5ID0gInJhY2UiKSB8PgogIG11dGF0ZShyZWplY3RlZF9jb3VudCA9IHJlcGxhY2VfbmEocmVqZWN0ZWRfY291bnQsIDApLAogICAgICAgICByZWplY3Rpb25fcmF0ZSA9IChyZWplY3RlZF9jb3VudCAvIHRvdGFsX2NvdW50KSAqIDEwMCkKCk1vb3JlX3JhdGVzCmBgYAoK4oCcR3VpbGZvcmQgQ291bnR5LCB0aGUgdGhpcmQtbW9zdCBwb3B1bG91cyBjb3VudHkgaW4gTm9ydGggQ2Fyb2xpbmEsIHJlamVjdGVkIHRoZSBsYXJnZXN0IG51bWJlciBvZiBtYWlsLWluIGJhbGxvdHMgYnkgQmxhY2sgdm90ZXJzIHN0YXRld2lkZTogMTc3LiBUaGUgcmVqZWN0aW9uIHJhdGUgZm9yIEJsYWNrIHZvdGVycywgYXQgMTYuNSUsIHdhcyB0aHJlZSB0aW1lcyBhcyBoaWdoIGFzIHRoZSByZWplY3Rpb24gcmF0ZSBmb3Igd2hpdGUgdm90ZXJzLCA1LjUlLCBwdXR0aW5nIHRoZSBjb3VudHkgbGFyZ2VseSBpbiBsaW5lIHdpdGggdGhlIHJlc3Qgb2YgdGhlIHN0YXRlIGluIDIwMTgu4oCdIAoKCmBgYHtyfQpHdWlsZm9yZF9yZWplY3RlZCA8LSBhYnNlbnN0ZWUgfD4KICBmaWx0ZXIoY291bnR5X2Rlc2MgPT0gIkdVSUxGT1JEIiwKICAgICAgICAgYmFsbG90X3J0bl9zdGF0dXMgIT0gIkFDQ0VQVEVEIiwKICAgICAgICAgYmFsbG90X3JlcV90eXBlID09ICJNQUlMIikgfD4KICBncm91cF9ieShyYWNlKSB8PgogIHN1bW1hcmlzZShyZWplY3RlZF9jb3VudCA9IG4oKSkKCkd1aWxmb3JkX3RvdGFsIDwtIGFic2Vuc3RlZSB8PgogIGZpbHRlcihjb3VudHlfZGVzYyA9PSAiR1VJTEZPUkQiLAogICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gIk1BSUwiKSB8PgogIGdyb3VwX2J5KHJhY2UpIHw+CiAgc3VtbWFyaXNlKHRvdGFsX2NvdW50ID0gbigpKQoKCkd1aWxmb3JkX3JhdGVzIDwtIEd1aWxmb3JkX3RvdGFsIHw+CiAgbGVmdF9qb2luKEd1aWxmb3JkX3JlamVjdGVkLCBieSA9ICJyYWNlIikgfD4KICBtdXRhdGUocmVqZWN0ZWRfY291bnQgPSByZXBsYWNlX25hKHJlamVjdGVkX2NvdW50LCAwKSwKICAgICAgICAgcmVqZWN0aW9uX3JhdGUgPSAocmVqZWN0ZWRfY291bnQgLyB0b3RhbF9jb3VudCkgKiAxMDApCgpHdWlsZm9yZF9yYXRlcwoKCgpgYGAK4oCcVGhlIGFuYWx5c2lzIGJ5IFByb1B1YmxpY2EgYW5kIFdSQUwgTmV3cyBzaG93cyA0MCUgb2YgcmVqZWN0ZWQgYmFsbG90cyB3ZXJlIHN1Ym1pdHRlZCBieSB2b3RlcnMgd2hvIGlkZW50aWZ5IGFzIEJsYWNrIG9yIEFmcmljYW4gQW1lcmljYW4sIEluZGlhbiBBbWVyaWNhbiBvciBBbGFza2EgTmF0aXZlLCBBc2lhbiwgdHdvIG9yIG1vcmUgcmFjZXMsIG9yIG90aGVyLuKAnQpgYGB7cn0KTkNfcmVqZWN0ZWQgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGJhbGxvdF9ydG5fc3RhdHVzICE9ICJBQ0NFUFRFRCIsCiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSAiTUFJTCIpIHw+CiAgZ3JvdXBfYnkocmFjZSl8PgogIHN1bW1hcmlzZShjb3VudCA9IG4oKSl8PgphcnJhbmdlKGRlc2MoY291bnQpKQoKTkNfdG90YWxfcmFjZSA8LSBhYnNlbnN0ZWUgfD4KICBmaWx0ZXIoYmFsbG90X3JlcV90eXBlID09ICJNQUlMIikgfD4KICBncm91cF9ieShyYWNlKSB8PgogIHN1bW1hcmlzZShjb3VudCA9IG4oKSkgfD4KYXJyYW5nZShkZXNjKGNvdW50KSkKICAKTkNfcGVyY2VudF9yZWplY3RlZCA8LSBOQ190b3RhbF9yYWNlIHw+IGxlZnRfam9pbihOQ19yZWplY3RlZCwgam9pbl9ieShyYWNlKSkgfD4KICByZW5hbWUoCiAgICB0b3RhbCA9IGNvdW50LngsCiAgICByZWplY3RlZCA9IGNvdW50LnkKICApIHw+CiAgbXV0YXRlKHBlcmNlbnRfc3BvbGllZCA9IChyZWplY3RlZC90b3RhbCkpCgoKYGBgCgrigJxUaGUgZGlzcGFyaXR5IGhvbGRzIGZvciBydXJhbCBjb3VudGllcyBhcyB3ZWxsIGFzIHVyYmFuIG9uZXMsIGluIGFyZWFzIGRvbWluYXRlZCBieSBSZXB1YmxpY2FuIHZvdGVycyBhbmQgRGVtb2NyYXRpYyB2b3RlcnMgYWxpa2UuIEluIGxhcmdlbHkgdXJiYW4gV2FrZSBDb3VudHksIGZvciBleGFtcGxlLCB0aGUgcmVqZWN0aW9uIHJhdGUgZm9yIGJhbGxvdHMgY2FzdCBieSBCbGFjayB2b3RlcnMgaXMgdHdpY2UgdGhhdCBvZiBiYWxsb3RzIGNhc3QgYnkgd2hpdGUgdm90ZXJzLuKAnSAKCmBgYHtyfQpXYWtlX3JlamVjdGVkIDwtIGFic2Vuc3RlZSB8PgogIGZpbHRlcihjb3VudHlfZGVzYyA9PSAiV0FLRSIsCiAgICAgICAgIGJhbGxvdF9ydG5fc3RhdHVzICE9ICJBQ0NFUFRFRCIsCiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSAiTUFJTCIpIHw+CiAgZ3JvdXBfYnkocmFjZSkgfD4KICBzdW1tYXJpc2UocmVqZWN0ZWRfY291bnQgPSBuKCkpCgpXYWtlX3RvdGFsIDwtIGFic2Vuc3RlZSB8PgogIGZpbHRlcihjb3VudHlfZGVzYyA9PSAiV0FLRSIsCiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSAiTUFJTCIpIHw+CiAgZ3JvdXBfYnkocmFjZSkgfD4KICBzdW1tYXJpc2UodG90YWxfY291bnQgPSBuKCkpCgoKV2FrZV9yYXRlcyA8LSBXYWtlX3RvdGFsIHw+CiAgbGVmdF9qb2luKFdha2VfcmVqZWN0ZWQsIGJ5ID0gInJhY2UiKSB8PgogIG11dGF0ZShyZWplY3RlZF9jb3VudCA9IHJlcGxhY2VfbmEocmVqZWN0ZWRfY291bnQsIDApLAogICAgICAgICByZWplY3Rpb25fcmF0ZSA9IChyZWplY3RlZF9jb3VudCAvIHRvdGFsX2NvdW50KSAqIDEwMCkKCldha2VfcmF0ZXMKCgoKYGBgCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCgpgYGB7cn0KIyBsb2FkIHRoZSB0aWR5dmVyc2UKb3B0aW9ucyhzY2lwZW49OTk5KQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShsdWJyaWRhdGUpCmxpYnJhcnkoamFuaXRvcikKbGlicmFyeShyZWZpbnIpCmBgYAoKYGBge3J9CmFic2Vuc3RlZTwtIHJlYWRfY3N2KCJkYXRhL2Fic2VudGVlXzIwMTgxMTA2LmNzdiIpCmBgYApgYGB7cn0KYWJzZW5zdGVlPC1jbGVhbl9uYW1lcyhhYnNlbnN0ZWUpCmdsaW1wc2UoYWJzZW5zdGVlKQpgYGAKU2VudGVuY2UgMToKCuKAnEJsYWNrIHZvdGVycyB3ZXJlIG1vcmUgdGhhbiB0d2ljZSBhcyBsaWtlbHkgdG8gaGF2ZSBtYWlsLWluIGJhbGxvdHMgcmVqZWN0ZWQgdGhhbiB0aG9zZSBzdWJtaXR0ZWQgYnkgdGhlIHN0YXRl4oCZcyB3aGl0ZSB2b3RlcnMgaW4gMjAxOCwgYW5kIHJlamVjdGlvbiByYXRlcyBmb3IgMjAyMCBzaG93IGEgc2ltaWxhciBwYXR0ZXJuLCBhY2NvcmRpbmcgdG8gYSBuZXcgYW5hbHlzaXMgYnkgUHJvUHVibGljYSBhbmQgV1JBTCBOZXdzLjrigJnigJ0KClRoaXMgcGFyYWdyYXBoIGVzdGFibGlzaGVzIGEgZm91bmRhdGlvbiBmb3IgdGhlIGVudGlyZSBpbnZlc3RpZ2F0aW9uLiBJdCBpcyBjbGVhciB0aGF0IG9yaWdpbmFsIGRhdGEgYW5hbHlzaXMgYnkgdGhlIHJlcG9ydGVycyB1bmVhcnRoZWQgcmFjaWFsIGRpc3Bhcml0aWVzIGluIGJhbGxvdCByZWplY3Rpb24gcmF0ZXMuIFRoaXMgZmluZGluZyBpcyBrZXkgdG8gdW5kZXJzdGFuZGluZyB0aGUgc3R1ZHkncyBmb2N1cyBvbiBzeXN0ZW1pYyBpbmVxdWFsaXRpZXMuCgpgYGB7cn0KCk5DX3JlamVjdGVkIDwtIGFic2Vuc3RlZSB8PgogIGZpbHRlcihiYWxsb3RfcnRuX3N0YXR1cyAhPSAiQUNDRVBURUQiLAogICAgICAgICBiYWxsb3RfcmVxX3R5cGUgPT0gIk1BSUwiKSB8PgogIGdyb3VwX2J5KHJhY2UpfD4KICBzdW1tYXJpc2UoY291bnQgPSBuKCkpfD4KYXJyYW5nZShkZXNjKGNvdW50KSkKCk5DX3RvdGFsX3JhY2UgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGJhbGxvdF9yZXFfdHlwZSA9PSAiTUFJTCIpIHw+CiAgZ3JvdXBfYnkocmFjZSkgfD4KICBzdW1tYXJpc2UoY291bnQgPSBuKCkpIHw+CmFycmFuZ2UoZGVzYyhjb3VudCkpCiAgCk5DX3BlcmNlbnRfcmVqZWN0ZWQgPC0gTkNfdG90YWxfcmFjZSB8PiBsZWZ0X2pvaW4oTkNfcmVqZWN0ZWQsIGpvaW5fYnkocmFjZSkpIHw+CiAgcmVuYW1lKAogICAgdG90YWwgPSBjb3VudC54LAogICAgcmVqZWN0ZWQgPSBjb3VudC55CiAgKSB8PgogIG11dGF0ZShwZXJjZW50X3Nwb2xpZWQgPSAocmVqZWN0ZWQvdG90YWwpKQoKYGBgClNlbnRlbmNlIDI6CgrigJxNb29yZSBDb3VudHksIHdoaWNoIHJlamVjdGVkIGFib3V0IG9uZS10aGlyZCBvZiB0aGUgMTQ5IG1haWwtaW4gYmFsbG90cyByZXR1cm5lZCBieSBCbGFjayB2b3RlcnMgaW4gMjAxOCwgc2F5cyBzaGUgd2FzIHVuYXdhcmUgdGhhdCB0aGUgYmFsbG90IHNoZSBzZW50IGluIHdhc27igJl0IGNvdW50ZWQu4oCdCgpUaGlzIHNwZWNpZmljIGV4YW1wbGUgaWxsdXN0cmF0ZXMgYSByYWNpYWwgZGlzcGFyaXR5IGluIG9uZSBvZiB0aGUgbW9zdCBwb3B1bG91cyBjb3VudGllcywgcmV2ZWFsaW5nIGhvdyBkYXRhIGFuYWx5c2lzIHNwb3RsaWdodGVkIGxvY2FsIGRpc2NyZXBhbmNpZXMgYW5kIHVzZWQgdGhlbSBhcyBldmlkZW5jZSBvZiBicm9hZGVyIHN0YXRld2lkZSBwYXR0ZXJucy4KCmBgYHtyfQpNb29yZV9yZWplY3RlZCA8LSBhYnNlbnN0ZWUgfD4KICBmaWx0ZXIoY291bnR5X2Rlc2MgPT0gIk1PT1JFIiwKICAgICAgICAgYmFsbG90X3J0bl9zdGF0dXMgIT0gIkFDQ0VQVEVEIiwKICAgICAgICAgYmFsbG90X3JlcV90eXBlID09ICJNQUlMIiwKICAgICAgICAgKSB8PgogIGdyb3VwX2J5KHJhY2UpIHw+CiAgc3VtbWFyaXNlKHJlamVjdGVkX2NvdW50ID0gbigpKQoKTW9vcmVfdG90YWwgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGNvdW50eV9kZXNjID09ICJNT09SRSIsCiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSAiTUFJTCIsCiAgICAgICAgKSB8PgogIGdyb3VwX2J5KHJhY2UpIHw+CiAgc3VtbWFyaXNlKHRvdGFsX2NvdW50ID0gbigpKQoKCk1vb3JlX3JhdGVzIDwtIE1vb3JlX3RvdGFsIHw+CiAgbGVmdF9qb2luKE1vb3JlX3JlamVjdGVkLCBieSA9ICJyYWNlIikgfD4KICBtdXRhdGUocmVqZWN0ZWRfY291bnQgPSByZXBsYWNlX25hKHJlamVjdGVkX2NvdW50LCAwKSwKICAgICAgICAgcmVqZWN0aW9uX3JhdGUgPSAocmVqZWN0ZWRfY291bnQgLyB0b3RhbF9jb3VudCkgKiAxMDApCgpNb29yZV9yYXRlcwpgYGAKU2VudGVuY2UgMzogCgrigJxHdWlsZm9yZCBDb3VudHksIHRoZSB0aGlyZC1tb3N0IHBvcHVsb3VzIGNvdW50eSBpbiBOb3J0aCBDYXJvbGluYSwgcmVqZWN0ZWQgdGhlIGxhcmdlc3QgbnVtYmVyIG9mIG1haWwtaW4gYmFsbG90cyBieSBCbGFjayB2b3RlcnMgc3RhdGV3aWRlOiAxNzcuIFRoZSByZWplY3Rpb24gcmF0ZSBmb3IgQmxhY2sgdm90ZXJzLCBhdCAxNi41JSwgd2FzIHRocmVlIHRpbWVzIGFzIGhpZ2ggYXMgdGhlIHJlamVjdGlvbiByYXRlIGZvciB3aGl0ZSB2b3RlcnMsIDUuNSUsIHB1dHRpbmcgdGhlIGNvdW50eSBsYXJnZWx5IGluIGxpbmUgd2l0aCB0aGUgcmVzdCBvZiB0aGUgc3RhdGUgaW4gMjAxOC7igJ0gCgpUaGlzIHBhcmFncmFwaCBzaG93cyB0aGUgY29udGludWl0eSBvZiB0aGUgdHJlbmQsIGxpbmtpbmcgY3VycmVudCBkYXRhIHRvIHRoZSBzYW1lIGlzc3VlcyBvYnNlcnZlZCBpbiAyMDE4LiBJdCBjb25maXJtcyB0aGF0IGRpc3Bhcml0aWVzIHBlcnNpc3QuCgpgYGB7cn0KR3VpbGZvcmRfcmVqZWN0ZWQgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGNvdW50eV9kZXNjID09ICJHVUlMRk9SRCIsCiAgICAgICAgIGJhbGxvdF9ydG5fc3RhdHVzICE9ICJBQ0NFUFRFRCIsCiAgICAgICAgIGJhbGxvdF9yZXFfdHlwZSA9PSAiTUFJTCIpIHw+CiAgZ3JvdXBfYnkocmFjZSkgfD4KICBzdW1tYXJpc2UocmVqZWN0ZWRfY291bnQgPSBuKCkpCgpHdWlsZm9yZF90b3RhbCA8LSBhYnNlbnN0ZWUgfD4KICBmaWx0ZXIoY291bnR5X2Rlc2MgPT0gIkdVSUxGT1JEIiwKICAgICAgICAgYmFsbG90X3JlcV90eXBlID09ICJNQUlMIikgfD4KICBncm91cF9ieShyYWNlKSB8PgogIHN1bW1hcmlzZSh0b3RhbF9jb3VudCA9IG4oKSkKCgpHdWlsZm9yZF9yYXRlcyA8LSBHdWlsZm9yZF90b3RhbCB8PgogIGxlZnRfam9pbihHdWlsZm9yZF9yZWplY3RlZCwgYnkgPSAicmFjZSIpIHw+CiAgbXV0YXRlKHJlamVjdGVkX2NvdW50ID0gcmVwbGFjZV9uYShyZWplY3RlZF9jb3VudCwgMCksCiAgICAgICAgIHJlamVjdGlvbl9yYXRlID0gKHJlamVjdGVkX2NvdW50IC8gdG90YWxfY291bnQpICogMTAwKQoKR3VpbGZvcmRfcmF0ZXMKCgoKYGBgCgpTZW50ZW5jZSA0OgoK4oCcVGhlIGFuYWx5c2lzIGJ5IFByb1B1YmxpY2EgYW5kIFdSQUwgTmV3cyBzaG93cyA0MCUgb2YgcmVqZWN0ZWQgYmFsbG90cyB3ZXJlIHN1Ym1pdHRlZCBieSB2b3RlcnMgd2hvIGlkZW50aWZ5IGFzIEJsYWNrIG9yIEFmcmljYW4gQW1lcmljYW4sIEluZGlhbiBBbWVyaWNhbiBvciBBbGFza2EgTmF0aXZlLCBBc2lhbiwgdHdvIG9yIG1vcmUgcmFjZXMsIG9yIG90aGVyLuKAnQoKQnkgYW5hbHl6aW5nIG11bHRpcGxlIGRlbW9ncmFwaGljIGdyb3VwcywgdGhlIHJlcG9ydGVyc+KAmSB3b3JrIHJldmVhbHMgdGhhdCBtaW5vcml0eSBncm91cHMgZGlzcHJvcG9ydGlvbmF0ZWx5IGZhY2UgbWFpbC1pbiBiYWxsb3QgcmVqZWN0aW9ucywgc2hvd2luZyB0aGUgYnJvYWQgc2NvcGUgb2YgdGhlIHByb2JsZW0uCgpgYGB7cn0KTkNfcmVqZWN0ZWRfdG90YWwgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGJhbGxvdF9ydG5fc3RhdHVzICE9ICJBQ0NFUFRFRCIpIHw+CiAgc3VtbWFyaXNlKGNvdW50ID0gbigpKQoKTkNfcmVqZWN0ZWRfbm9ud2hpdGUgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGJhbGxvdF9ydG5fc3RhdHVzICE9ICJBQ0NFUFRFRCIsCiAgICAgICAgIHJhY2UgIT0gIldISVRFIikgfD4KICBzdW1tYXJpc2UoY291bnQgPSBuKCkpCgpOQ19yZWplY3RlZF9yYXRpbyA8LSBiaW5kX2NvbHMoTkNfcmVqZWN0ZWRfbm9ud2hpdGUsIE5DX3JlamVjdGVkX3RvdGFsKSB8PgogIGNsZWFuX25hbWVzKCkgfD4KICByZW5hbWUoCiAgICBub253aGl0ZSA9IGNvdW50XzEsCiAgICB0b3RhbCA9IGNvdW50XzIKICApIHw+CiAgbXV0YXRlKG5vbndoaXRlX3JlamVjdGVkID0gKG5vbndoaXRlL3RvdGFsKSoxMDApCgpOQ19yZWplY3RlZF9yYXRpbwoKCmBgYAoKU2VudGVuY2UgNToKCuKAnFRoZSBkaXNwYXJpdHkgaG9sZHMgZm9yIHJ1cmFsIGNvdW50aWVzIGFzIHdlbGwgYXMgdXJiYW4gb25lcywgaW4gYXJlYXMgZG9taW5hdGVkIGJ5IFJlcHVibGljYW4gdm90ZXJzIGFuZCBEZW1vY3JhdGljIHZvdGVycyBhbGlrZS4gSW4gbGFyZ2VseSB1cmJhbiBXYWtlIENvdW50eSwgZm9yIGV4YW1wbGUsIHRoZSByZWplY3Rpb24gcmF0ZSBmb3IgYmFsbG90cyBjYXN0IGJ5IEJsYWNrIHZvdGVycyBpcyB0d2ljZSB0aGF0IG9mIGJhbGxvdHMgY2FzdCBieSB3aGl0ZSB2b3RlcnMu4oCdIAoKVGhpcyBmaW5kaW5nIGhpZ2hsaWdodHMgdGhlIGdlb2dyYXBoaWNhbCByYW5nZSBvZiB0aGUgcHJvYmxlbSBhbmQgaG93IHJhY2lhbCBkaXNwYXJpdGllcyBpbiBtYWlsLWluIGJhbGxvdCByZWplY3Rpb24gZXh0ZW5kIGFjcm9zcyB2YXJpb3VzIHBvbGl0aWNhbCBsYW5kc2NhcGVzLgoKYGBge3J9Cldha2VfcmVqZWN0ZWQgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGNvdW50eV9kZXNjID09ICJXQUtFIiwKICAgICAgICAgYmFsbG90X3J0bl9zdGF0dXMgIT0gIkFDQ0VQVEVEIiwKICAgICAgICAgYmFsbG90X3JlcV90eXBlID09ICJNQUlMIikgfD4KICBncm91cF9ieShyYWNlKSB8PgogIHN1bW1hcmlzZShyZWplY3RlZF9jb3VudCA9IG4oKSkKCldha2VfdG90YWwgPC0gYWJzZW5zdGVlIHw+CiAgZmlsdGVyKGNvdW50eV9kZXNjID09ICJXQUtFIiwKICAgICAgICAgYmFsbG90X3JlcV90eXBlID09ICJNQUlMIikgfD4KICBncm91cF9ieShyYWNlKSB8PgogIHN1bW1hcmlzZSh0b3RhbF9jb3VudCA9IG4oKSkKCgpXYWtlX3JhdGVzIDwtIFdha2VfdG90YWwgfD4KICBsZWZ0X2pvaW4oV2FrZV9yZWplY3RlZCwgYnkgPSAicmFjZSIpIHw+CiAgbXV0YXRlKHJlamVjdGVkX2NvdW50ID0gcmVwbGFjZV9uYShyZWplY3RlZF9jb3VudCwgMCksCiAgICAgICAgIHJlamVjdGlvbl9yYXRlID0gKHJlamVjdGVkX2NvdW50IC8gdG90YWxfY291bnQpICogMTAwKQoKV2FrZV9yYXRlcwoKCgpgYGAK</div>
 
 
 
