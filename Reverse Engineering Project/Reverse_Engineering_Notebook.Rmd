@@ -1,9 +1,11 @@
 ---
-title: "R Notebook"
+title: "Reverse Engineering Notebook"
 output: html_notebook
 ---
 
+Reverse Engineering: "In North Carolina, Black Voters’ Mail-In Ballots Much More Likely to Be Rejected Than Those From Any Other Race"
 
+About the data: ProPublica and WRAL News analyzed records of 104,091 mail-in absentee ballots from the North Carolina State Board of Elections. Only ballots with valid return dates were included in this analysis. A ballot was counted as rejected by the publications if it was returned to the state and had a status other than “accepted.” To compare rejection rates between ballots cast by minority voters and white voters, they used a risk ratio analysis, dividing the rate of ballot rejections in the minority group by the rate of ballot rejections among white voters. The resulting ratio, commonly used in epidemiology, gives an estimate for how much more at risk ballots cast by voters in the minority group were to be rejected.
 
 ```{r}
 # load the tidyverse
@@ -28,6 +30,8 @@ Sentence 1:
 “Black voters were more than twice as likely to have mail-in ballots rejected than those submitted by the state’s white voters in 2018, and rejection rates for 2020 show a similar pattern, according to a new analysis by ProPublica and WRAL News.:’”
 
 This paragraph establishes a foundation for the entire investigation. It is clear that original data analysis by the reporters unearthed racial disparities in ballot rejection rates. This finding is key to understanding the study's focus on systemic inequalities.
+
+To develop this code we filtered by whether the ballot was accepted or not and then grouped by the race in order to make a data set that shows the percent of ballots rejected by race, entitled 'NC_percent_rejected'.
 
 ```{r}
 
@@ -57,6 +61,8 @@ Sentence 2:
 “Moore County, which rejected about one-third of the 149 mail-in ballots returned by Black voters in 2018, says she was unaware that the ballot she sent in wasn’t counted.”
 
 This specific example illustrates a racial disparity in one of the most populous counties, revealing how data analysis spotlighted local discrepancies and used them as evidence of broader statewide patterns.
+
+To develop this code we filtered by whether the ballot was accepted or not and then grouped by the race in order to make a data set that shows the percent of ballots rejected by race in Moore county, entitled 'Moore Rates'.
 
 ```{r}
 Moore_rejected <- absenstee |>
@@ -88,6 +94,7 @@ Sentence 3:
 
 This paragraph shows the continuity of the trend, linking current data to the same issues observed in 2018. It confirms that disparities persist.
 
+To develop this code we filtered by whether the ballot was accepted or not and then grouped by the race in order to make a data set that shows the percent of ballots rejected by race in Guilford County, entitled 'Guilford_rates'.
 ```{r}
 Guilford_rejected <- absenstee |>
   filter(county_desc == "GUILFORD",
@@ -120,6 +127,8 @@ Sentence 4:
 
 By analyzing multiple demographic groups, the reporters’ work reveals that minority groups disproportionately face mail-in ballot rejections, showing the broad scope of the problem.
 
+To develop this code we filtered by whether the ballot was accepted or not and then grouped by races other than white in order to make a data set that shows the percent of ballots rejected by race, entitled 'NC_rejected_ratio'.
+
 ```{r}
 NC_rejected_total <- absenstee |>
   filter(ballot_rtn_status != "ACCEPTED") |>
@@ -148,6 +157,9 @@ Sentence 5:
 “The disparity holds for rural counties as well as urban ones, in areas dominated by Republican voters and Democratic voters alike. In largely urban Wake County, for example, the rejection rate for ballots cast by Black voters is twice that of ballots cast by white voters.” 
 
 This finding highlights the geographical range of the problem and how racial disparities in mail-in ballot rejection extend across various political landscapes.
+
+
+To develop this code we filtered by whether the ballot was accepted or not and then grouped by the race in order to make a data set that shows the percent of ballots rejected by race in Wake County, entitled 'Wake_rates'.
 
 ```{r}
 Wake_rejected <- absenstee |>

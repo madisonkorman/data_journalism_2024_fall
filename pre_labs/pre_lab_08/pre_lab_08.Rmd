@@ -73,7 +73,7 @@ With ggplot, the first thing we'll always do is draw a blank canvas that will co
 
 ### Task 4: Create an empty ggplot container
 
-**Task** Run the following code. Explain what you see after running the code in the space below. **Answer** The code ulls up a blank white box.
+**Task** Run the following code. Explain what you see after running the code in the space below. **Answer** The code pulls up a blank white box.
 
 ```{r}
 maryland_top_counties |>
