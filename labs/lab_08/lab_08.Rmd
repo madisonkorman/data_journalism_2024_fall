@@ -145,15 +145,37 @@ maryland_lowest_counties_dem |>
 
 **Q3** Let's make a line chart using the second set of absentee ballot data - this one tracking returns by date. We want to see received ballots for Frederick County for Democrats, Republicans and Others, so you'll make a chart with three lines, adding color to each one (you can choose, but choose sensibly). Give the chart a title and good labels. What's the story that this line chart tells? Compare and contrast the three lines. Does it match what you know about absentee voting habits?
 
-**A3** not done yet
+**A3** The story the chart shows is that Democrats in Frederick County submit more absentee ballots than any other party. Democrats have significantly more than the other parties and it is increasing at a faster rate. It lines up with me thinking Democrats normally have a lot of absentee votes.
 
 
 ```{r}
-md_absentee_ballots_date_fred <-md_absentee_ballots_date |>
-  select(date, dem_received, rep_received, oth_received, county_name)
-```
 
-```{r}
+frederick_data <- md_absentee_ballots_date[md_absentee_ballots_date$county_name == "FREDERICK", ]
+
+
+frederick_data$date <- as.Date(frederick_data$date)
+
+
+ggplot(frederick_data, aes(x = date)) +
+  geom_line(aes(y = dem_received, color = "Democrat"), size = 1.2) +
+  geom_line(aes(y = rep_received, color = "Republican"), size = 1.2) +
+  geom_line(aes(y = oth_received, color = "Other"), size = 1.2) +
+  scale_color_manual(values = c("Democrat" = "blue", "Republican" = "red", "Other" = "green")) +
+  labs(
+    title = "Absentee Ballots Received Over Time in Frederick County",
+    x = "Date",
+    y = "Ballots Received",
+    color = "Party",
+    caption = "Source: Maryland State Board of Elections"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 12),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
+
 
 ```
 
@@ -175,9 +197,26 @@ Follow these steps:
 4. Add a line of fit to the plot using geom_smooth (https://ggplot2.tidyverse.org/reference/geom_smooth.html#ref-examples). Specify the method as lm.
 5. In the answer space below, describe what you see. In a general sense, how would you report out the main point(s) of this chart? Are there counties that seem to be over or under-performing in relation to the overall trend?
 
-**A4.** 
+**A4.** Montgomery and Prince George's County have significantly more absentee ballots received because they have they highest populations in Marylnd. Perhaps Baltimore City is underperforming depending on the population rates. I would perhaps look into why Baltimore City may be underperforming, if it is. 
 
 ```{r}
+
+ggplot(md_absentee_ballots, aes(x = total_sent, y = total_received)) +
+  geom_point(color = "blue", size = 3) +
+  geom_text(aes(label = county_name), hjust = 1, vjust = 1, size = 3, color = "darkgray") +
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  labs(
+    title = "Relationship Between Ballots Sent and Received by County",
+    x = "Total Ballots Sent",
+    y = "Total Ballots Received",
+    caption = "Source: Maryland State Board of Elections"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 12),
+    plot.caption = element_text(size = 10)
+  )
 
   
 ```

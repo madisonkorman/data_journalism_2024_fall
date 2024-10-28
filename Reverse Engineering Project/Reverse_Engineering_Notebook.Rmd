@@ -5,6 +5,9 @@ output: html_notebook
 
 Reverse Engineering: "In North Carolina, Black Voters’ Mail-In Ballots Much More Likely to Be Rejected Than Those From Any Other Race"
 
+Story Link:
+https://www.propublica.org/article/in-north-carolina-black-voters-mail-in-ballots-much-more-likely-to-be-rejected-than-those-from-any-other-race
+
 About the data: ProPublica and WRAL News analyzed records of 104,091 mail-in absentee ballots from the North Carolina State Board of Elections. Only ballots with valid return dates were included in this analysis. A ballot was counted as rejected by the publications if it was returned to the state and had a status other than “accepted.” To compare rejection rates between ballots cast by minority voters and white voters, they used a risk ratio analysis, dividing the rate of ballot rejections in the minority group by the rate of ballot rejections among white voters. The resulting ratio, commonly used in epidemiology, gives an estimate for how much more at risk ballots cast by voters in the minority group were to be rejected.
 
 ```{r}
