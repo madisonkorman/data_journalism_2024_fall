@@ -24,6 +24,13 @@ options(scipen=999)
 
 # Load libraries
 
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(refinr)
+library(sf)
+library(tigris)
+library(ggplot2)
 ```
 
 Let's explore the election results from last night and make some maps!
@@ -32,33 +39,212 @@ Let's explore the election results from last night and make some maps!
 
 **Q1.** Make a county-level map of Maryland's results for U.S. Senate using `md_senate_county_24.csv` in the data folder, calculating the difference between Angela Alsobrooks's percentage of the total votes and Larry Hogan's percentage of the total votes and displaying that percentage difference on the map. What is the story here, and what is the county with the most interesting results?
 
-**A1.**
+**A1.** The story is that she won by more in more populated counties that tend to skew more blue but in more red counties she did not win by nearly as much as Hogan or at all.
 
 ```{r}
+
+md_senate24 <- st_read("data/md_senate_county_24.csv")
+
+glimpse(md_senate24)
+```
+
+```{r}
+
+md_senate24 <- md_senate24 |> 
+  mutate(
+    Alsobrooks = as.numeric(Alsobrooks),
+    Hogan = as.numeric(Hogan),
+    Scott = as.numeric(Scott),
+    Total = Alsobrooks + Hogan + Scott,
+    Hogan_Pct= Hogan/Total,
+    Alsobrooks_Pct=Alsobrooks/Total,
+    Difference_Pct= Alsobrooks_Pct - Hogan_Pct
+  )
+```
+
+
+```{r}
+diff_md_senate24 <- md_senate24 |> 
+  select(County, Difference_Pct, GEOID)
+```
+
+```{r}
+counties <- counties()
+
+glimpse(counties)
+
+
+md_counties <- counties |>
+  filter(STATEFP == "24")
+```
+
+```{r}
+diff_md_senate24<- diff_md_senate24 |>
+left_join(md_counties, join_by(GEOID))
+```
+
+
+  
+```{r}
+
+diff_md_senate24 <- st_as_sf(diff_md_senate24)
+
+```
+
+```{r}
+ggplot() +
+  geom_sf(data=diff_md_senate24, aes(fill=Difference_Pct)) +
+  scale_colour_viridis_b(option="magma") +
+  theme_minimal()
 ```
 
 **Q2.** Make a county-level map showing the difference between Donald Trump's county-level performance this year and Larry Hogan's, using percentages to compare the two as you did in Q1. You can use the dataframe you initially loaded for Q1, and you'll need to load the 2024 presidential results in the data folder and join them to it before proceeding. Are there any counties where Trump got a higher percentage than Hogan? How would you describe the map showing the Trump-Hogan difference?
 
 Also answer this: is a map the best way to present this data? What else could you make that might convey more information?
 
-**A2.**
+**A2.** Trump did better than Hogan in Frederick and Allegany county. It seems like they performed pretty consistently across the state. The map is a little confusing to me but I feel like it would be effective if it had labels to see the counties so I could tell what county I was looking at. 
 
 ```{r}
+
+md_pres24 <- st_read("data/md_pres_county_24.csv")
+
+glimpse(md_pres24)
+```
+```{r}
+md_pres_hogan_24<- md_pres24 |>
+left_join(md_senate24, join_by(GEOID))
 ```
 
+```{r}
+md_pres_hogan_24 <- md_pres_hogan_24 |> 
+  mutate(
+    Trump = as.numeric(Trump),
+    Harris = as.numeric(Harris),
+    Oliver = as.numeric(Oliver),
+    Stein = as.numeric(Stein),
+    Kennedy = as.numeric(Kennedy),
+    Total = Alsobrooks + Hogan + Scott,
+     Pres_Total = Trump + Harris + Oliver+Stein+Kennedy,
+    Hogan_Pct= Hogan/Total,
+Trump_Pct=Trump/Pres_Total,
+    Difference_Pct= Trump_Pct - Hogan_Pct
+  )
+```
+
+```{r}
+md_pres_hogan_24<- md_pres_hogan_24 |>
+left_join(md_counties, join_by(GEOID))
+```
+
+```{r}
+
+md_pres_hogan_24 <- st_as_sf(md_pres_hogan_24)
+
+```
+
+```{r}
+ggplot() +
+  geom_sf(data=md_pres_hogan_24, aes(fill=Difference_Pct)) +
+  scale_colour_viridis_b(option="magma") +
+  theme_minimal()
+```
 **Q3** Make another map showing the difference between Larry Hogan's county-level performance this year and from his governor race in 2018, using percentages to compare the two as you did in Q2. You can use the dataframe you initially loaded for Q1, and you'll need to load the 2018 governor results in the data folder and join them to it before proceeding. Are there any counties where Hogan did better this year? How would you describe the map showing the difference?
 
-**A3**
+**A3** He did slightly better in Allegany, Cecil, Garret, and a few counties on the eastern shore in 2024. The darker color represent the counties he did better in, in the 2024 election.
 
 ```{r}
+
+md_gov_county_18 <- st_read("data/md_gov_county_18.csv")
+
+glimpse(md_gov_county_18)
 ```
+
+
+```{r}
+
+md_gov_county_18 <- md_gov_county_18 |> 
+  mutate(
+    Jealous = as.numeric(Jealous),
+    Hogan.x = as.numeric(Hogan.x),
+   Quinn = as.numeric(Quinn),
+    Schlakman = as.numeric(Schlakman),
+    Total_2018 = Jealous + Hogan.x + Quinn + Schlakman,
+    Hogan_Pct_2018= Hogan.x/Total_2018,
+
+    Difference_Pct_Hogan= Hogan_Pct_2018 - Hogan_Pct
+  )
+```
+
+
+
+```{r}
+md_gov_county_18<- md_gov_county_18 |>
+left_join(md_counties, join_by(GEOID))
+```
+
+```{r}
+md_gov_county_18<- md_gov_county_18 |>
+left_join(md_senate24, join_by(GEOID))
+```
+  
+```{r}
+
+md_gov_county_18 <- st_as_sf(md_gov_county_18)
+
+```
+
+```{r}
+ggplot() +
+  geom_sf(data=md_gov_county_18, aes(fill=Difference_Pct_Hogan)) +
+  scale_colour_viridis_b(option="magma") +
+  theme_minimal()
+```
+
+
 
 **Q4.** Choose your own map adventure! In the data folder I've included Maryland county-level results for the abortion rights amendment vote this year, plus the 2020 presidential results by county and 2022 governor's results by county. Using one of those and at least one other contest for comparison, make a county-level map showing what you think is the most interesting aspect of that data, and describe the results in terms of a possible story. You can bring in other data, such as Census information, if you like.
 
-**A4.**
+**A4.** My map shows the percentage difference of people for vs against abortion in Maryland based on the counties. From the map you can see that the majority of people against it tend to live in western Maryland or the eastern shore of Maryland. I am unsure what the issue is with Baltimore City and County.
 
 ```{r}
 
+md_abortion_24 <- st_read("data/md_abortion_24.csv")
+
+glimpse(md_abortion_24)
+
 ```
 
+```{r}
+md_abortion_24<- md_abortion_24 |>
+left_join(md_counties, by = c("County" = "NAME"))
+```
+
+```{r}
+
+md_abortion_24 <- md_abortion_24 |> 
+  mutate(
+    For = as.numeric(For),
+    Against = as.numeric(Against),
+    Total = For + Against,
+    Pct_For= For/Total,
+    Pct_Against= Against/Total,
+
+    Difference_Pct= Pct_For - Pct_Against
+  )
+```
+
+
+  
+```{r}
+
+md_abortion_24 <- st_as_sf(md_abortion_24)
+
+```
+
+```{r}
+ggplot() +
+  geom_sf(data=md_abortion_24, aes(fill=Difference_Pct)) +
+  scale_colour_viridis_b(option="magma") +
+  theme_minimal()
+```
 -30-
