@@ -18,7 +18,11 @@ knitr::opts_chunk$set(echo = TRUE)
 **Task** Create a codeblock and load appropriate packages and settings for this lab.
 
 ```{r}
-
+#| output: false
+library(rvest)
+library(tidyverse)
+library(janitor)
+library(tibble)
 ```
 
 Let's get to scraping. We'll be working on collecting information about Maryland election results, and then we'll grab some congressional press releases. For Maryland races, we'll focus on Board of Education races using this CNS story as a guide: <https://cnsmaryland.org/2024/11/08/md-conservatives-make-gains-in-school-board-races/>. You should read it.
@@ -30,7 +34,27 @@ Let's get to scraping. We'll be working on collecting information about Maryland
 **A1**
 
 ```{r}
+url <- 'https://elections.maryland.gov/elections/2024/general_Results/gen_results_2024_by_county_11.html'
 
+results <- read_html(url)|>
+  html_table()
+
+boe_results <- results [[9]]
+
+boe_results|>
+  clean_names()|>
+  slice(-9)|>
+  mutate(
+    early_voting = as.numeric(str_remove(early_voting, ",")),
+    election_day = as.numeric(str_remove(early_voting, ",")),
+    mail_in_ballot = as.numeric(str_remove(early_voting, ",")),
+    provisional = as.numeric(str_remove(early_voting, ",")),
+    Total = as.numeric(str_remove(early_voting, ",")),
+    percentage = as.numeric(str_remove(early_voting, "%"))
+  )|>
+  ggplot() +
+  geom_bar(aes(x=reorder(name, percentage), weight = percentage)) +
+  coord_flip()
 ```
 
 **Q2** Next, let's scrape the list of press releases from Maryland's Office of the State Prosecutor, <https://osp.maryland.gov/category/press-releases/>. This isn't a table, so you'll need to use `html_elements()` and your browser's inspector and do some clean up on the results. The result should be a dataframe with three columns: title, url and date. HINT: you can extract the date from the title using lubridate OR you can use the `separate` function.
@@ -39,11 +63,32 @@ You should have 10 releases when finished, not 20.
 
 Then, write code that finds the most recent release with the word "Campaign" in the title. What election does it refer to?
 
-**A2**
+**A2** John King for Governor Campaign in April 3, 2024.
 
 ```{r}
 
+url <- 'https://osp.maryland.gov/category/press-releases/'
+
+
+results <- url |> 
+  read_html() |> 
+  html_elements("article a")
+
+
+tibble(
+  title = results |> html_text(trim= TRUE),
+  url = results |> html_attr("href")
+) |>
+  separate(title, c("date", "title"),":") |>
+  filter(date != "Read the Rest...") |>
+  filter(str_detect(title, "campaign|Campaign"))
+
+
+
 ```
+
+
+
 
 **Q3** Sen. Ben Cardin, D-Maryland, has posted hundreds of press releases at <https://www.cardin.senate.gov/?post_type=press-releases>. It would be great to have all of them in a dataframe that has the following columns: date, title and url.
 
@@ -55,8 +100,30 @@ When you're done, rename the columns so they make sense, then make sure the date
 
 Finally, tell me what questions you could ask of this data, and what other information about it would be useful to have. Be creative.
 
-**A3**
+**A3** You could see what day of the month the majority of press releases came out. You could also see hwat time period or month had the most press releases. 
 
 ```{r}
+html <- read_html('https://www.cardin.senate.gov/?post_type=press-releases')
 
+dates<- html |>
+  html_elements("h5")|>
+  html_text()|>
+  as_tibble()
+
+titles<- html |>
+  html_elements("h3") |>
+  html_text(trim = TRUE)|>
+  as_tibble()
+
+urls<- html |>
+    html_elements("h3 a") |>
+  html_attr("href")|>
+  as_tibble()
+
+dates |>
+  bind_cols(titles, urls)|>
+clean_names()|>
+  rename(date = value_1,
+         title = value_2,
+         url = value_3)
 ```
