@@ -24,7 +24,7 @@ To do this, we'll need a new library -- [tidytext](https://cran.r-project.org/we
 **Task** Run the following code in the gray-colored codeblock below to load the libraries we'll use.
 
 ```{r}
-#install.packages("tidytext")
+install.packages("tidytext")
 library(tidyverse)
 library(tidytext)
 library(janitor)
@@ -39,7 +39,7 @@ Let's read in this data and examine it:
 
 ### Task 2: Read in data
 
-**Task** Run the following code and describe the dataframe it outputs. **Answer**
+**Task** Run the following code and describe the dataframe it outputs. **Answer** It is an empty data frame called releases.
 
 ```{r}
 releases <- read_rds("data/cardin_releases.rds")
@@ -89,7 +89,7 @@ If you are trying to create a list of unique words, R will treat differences in 
 
 ### Task 5: Trying out unique
 
-**Task** Run the following code and describe what the `unique` function does to the original list of words. **Answer**
+**Task** Run the following code and describe what the `unique` function does to the original list of words. **Answer** The unique() function extracts the unique elements from the vector, returning a new vector with duplicate elements removed.
 
 ```{r}
 a_list_of_words <- c("Dog", "dog", "dog", "cat", "cat", ",")
@@ -100,7 +100,7 @@ Fortunately, this is a solved problem with tidytext, which has a function called
 
 ### Task 6: Trying out unnest_tokens
 
-**Task** Run the following code and describe the output of using the `unnest_tokens` function. **Answer**
+**Task** Run the following code and describe the output of using the `unnest_tokens` function. **Answer** This function pulled out unigue words from the press releases.
 
 ```{r}
 unique_words <- releases |> select(text) |>
@@ -110,7 +110,7 @@ View(unique_words)
 
 ### Task 7: Make a column chart
 
-**Task** Run the following code and describe what the resulting graphic shows. Is it interesting? **Answer**
+**Task** Run the following code and describe what the resulting graphic shows. Is it interesting? **Answer** Not necessarily because the main words used are articles which dont give us much insight. 
 
 Now we can look at the top words in this dataset. Let's limit ourselves to making a plot of the top 25 words, and we'll use the function `count` to do the counting:
 
@@ -161,7 +161,7 @@ From there, we can get a simple word frequency by just grouping them together an
 
 ### Task 9: Using anti_join
 
-**Task** Run the following code and describe the results. Is it more interesting than before? **Answer**
+**Task** Run the following code and describe the results. Is it more interesting than before? **Answer** Yes, now the coee identifies more important terminoligy rather than predominantly articles. 
 
 ```{r}
 unique_words |>
@@ -194,7 +194,7 @@ Then we can create top 10 lists for both of them and compare:
 
 ### Task 11: Create dataframes with the top 10 words in each year
 
-**Task** Run the following code and describe the results. **Answer**
+**Task** Run the following code and describe the results. **Answer** This gives me the number of times a word was used as well as the percentage, focusing in the chose stop words. It only displays the top 10 in descending order. 
 
 ```{r}
 unique_words_2022 |>
@@ -232,7 +232,7 @@ So this block is is going to do the following:
 
 ### Task 12: Create a dataframe with the top 10 two-word phrases for 2022
 
-**Task** Run the following code and describe the results. **Answer**
+**Task** Run the following code and describe the results. **Answer** This includes phrases rather than just words, displaying the number of times used and the percentage.
 
 ```{r}
 releases |>
@@ -252,7 +252,7 @@ And we already have a different, more nuanced result. Health was among the top s
 
 ### Task 13: Create a dataframe with the top 10 two-word phrases for 2024
 
-**Task** Run the following code and describe the results. **Answer**
+**Task** Run the following code and describe the results. **Answer** This shows the top 10 phrases paired with the number of times used and the percentage. 
 
 ```{r}
 releases |>
@@ -288,7 +288,7 @@ library(textstem)
 
 ### Task 15: Stemming vs. Lemmatization
 
-**Task** Run the following code and describe the differences between the two results. Which one might be more useful for the press release data? **Answer**
+**Task** Run the following code and describe the differences between the two results. Which one might be more useful for the press release data? **Answer**The first result may be better because it includes more variations of the word drive. 
 
 ```{r}
 dw <- c('driver', 'drive', 'drove', 'driven', 'drives', 'driving')
@@ -303,7 +303,7 @@ Let's try lemmatization on the 2024 unique words, and then compare the top ten t
 
 ### Task 16: Lemmatization vs. Words
 
-**Task** Run the following code and describe the differences between the two results. Which one is more useful? **Answer**
+**Task** Run the following code and describe the differences between the two results. Which one is more useful? **Answer**The second chart seems to be better because it cuts down on the words by combining similar words or the same word with different tenses. 
 
 ```{r}
 unique_words_2024_lemma <- lemmatize_words(unique_words_2024$word) |> as_tibble() |> rename(word = value)
@@ -329,7 +329,7 @@ Another popular use of text analysis is to measure the sentiment of a word - whe
 
 ### Task 17: Load the bing lexicon and produce sentiments for our 2022 and 2024 unique words
 
-**Task** Run the following code and describe the results. Do any of the sentiments seem incorrect or counter-intuitive? **Answer**
+**Task** Run the following code and describe the results. Do any of the sentiments seem incorrect or counter-intuitive? **Answer** Critical as negative could be misleading because sometimes critical can rfer negatively to health or it can mean something is important so I may think twice before fully relying on sentiments.
 
 ```{r}
 bing <- get_sentiments("bing")
