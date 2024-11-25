@@ -1,3 +1,4 @@
+
 ---
 title: "Data Analysis"
 author: "Jack, Madison, and Josh"
@@ -34,16 +35,8 @@ library(janitor)
 We pulled the data from a database of political emails. It is a massive dataframe, and for some reason, at first, it seemed like the download is not pulling all of the data required. Had to make a change and select "stream all rows," but the number of rows still doesn't match up with the number on the website.
 
 ```{r}
-# Load required data
-emails <- clean_names(read_csv("data/emails.csv"))
+emails <- clean_names(read_csv("data/emails.db"))
 emails
-
-
-# Path to data should be loaded from folder "data" i.e. read_csv("data/name_of_data.csv")
-
-# Clean required data and prepare for analysis if needed. 
-
-
 ```
 ```{r}
 glimpse(emails)
@@ -52,14 +45,80 @@ There are some problems here that we are going to need to get worked out. The fi
 
 In terms of defining rows and columns, there are 35,965 rows (huge dataset) and 14 columns. I couldn't save the data to GitHub. I had to remove the data.
 
-It should be pretty easy to answer the questions of which candidates send the most. The figuring out of what the emails are about may be harder; it seems like it might be a little hard to parse content with how it's set up (very messy). We may have to adjust our questions to make them more quantitative than qualitative.
+It should be pretty easy to answer the questions of which candidayes send the most. The figuring out of what the emails are about may be harded; it seems like it might be a little hard to parse content with how it's set up (very messy). We may have to adjust our questions to make them more quantitative than qualitative.
 
 ```{r}
 emails <- emails |> 
-  #TAKING OUT THE ROWID BECAUSE IT DOES NOT ADD ANYTHING TO THE DATA. SEEMS LIKE JUST AN EXTRA COLUMN THAT WE CAN REMOVE
   select(-rowid) |> 
   #renaming the date so it's explaining that it is also time.
   rename(date_and_time = date)
 emails
+```
+
+Q1: Which political candidate sent the most emails?
+
+A1:
+
+```{r}
+emails <- emails |>
+  group_by(sent) |>
+  summarize(email_count = n()) |>
+  arrange(desc(email_count)) 
+```
+
+Q2: During the election cycle, how frequently are emails sent? Which months/days saw the most volume?
+
+A2:
+
+```{r}
+emails_by_month <- emails |>
+  group_by(month) |>
+  summarize(email_count = n()) |>
+  arrange(desc(email_count)) 
+
+emails_by_day <- emails |>
+  group_by(day) |>
+  summarize(email_count = n()) |>
+  arrange(desc(email_count)) 
+```
+
+Q3: What types of messages are they and does this vary by party? (Ex. are the emails about fundraising, event invitations, policy stances, etc.)
+
+A3:
+
+```{r}
+
+```
+
+Q4: Do the emails contain any polarization or fear-mongering language and does this vary by party? (words like “fight”, “invasion”, etc.)
+
+A4:
+
+```{r}
+unique_words <- emails |>
+  select(body) |>
+  unnest_tokens(word, body) |>
+  anti_join(stop_words, by = "word")
+
+word_counts <- unique_words |>
+  count(word, sort = TRUE) |>
+  mutate(percent = (n / sum(n)) * 100)
+
+word_counts_by_party <- emails |>
+  select(body, party) |>
+  unnest_tokens(word, body) |>
+  anti_join(stop_words, by = "word") |>
+  count(party, word, sort = TRUE) |>
+  mutate(percent = (n / sum(n)) * 100)
+
+word_counts_by_party
+```
+
+Q5: How much money is the fundraising email asking for? Does this change depending on the month?
+
+A5:
+
+```{r}
+
 ```
 -30-
