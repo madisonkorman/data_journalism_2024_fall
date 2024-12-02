@@ -2,7 +2,7 @@
 ---
 title: "Data Analysis"
 author: "Jack, Madison, and Josh"
-date: "Nov. 9"
+date: "Dec. 2"
 output:
   html_document:
     theme: cerulean
@@ -26,8 +26,15 @@ In this notebook, we are doing data analysis on the political emails.
 Loading required libraries for this analysis.
 
 ```{r echo=FALSE, message=FALSE}
+options(scipen=999)
 library(tidyverse)
+library(lubridate)
 library(janitor)
+library(refinr)
+library(readr)
+library(tidytext)
+library(dplyr)
+library(stringr)
 ```
 
 ## Load and Cleaning Data
@@ -35,17 +42,18 @@ library(janitor)
 We pulled the data from a database of political emails. It is a massive dataframe, and for some reason, at first, it seemed like the download is not pulling all of the data required. Had to make a change and select "stream all rows," but the number of rows still doesn't match up with the number on the website.
 
 ```{r}
-emails <- clean_names(read_csv("data/emails.db"))
-emails
+emails<- read.csv("data/emails.csv")
 ```
+
 ```{r}
+emails<-clean_names(emails)
 glimpse(emails)
 ```
 There are some problems here that we are going to need to get worked out. The first is that the date format is in date/time format; I think this should work, but would need to consult.
 
 In terms of defining rows and columns, there are 35,965 rows (huge dataset) and 14 columns. I couldn't save the data to GitHub. I had to remove the data.
 
-It should be pretty easy to answer the questions of which candidayes send the most. The figuring out of what the emails are about may be harded; it seems like it might be a little hard to parse content with how it's set up (very messy). We may have to adjust our questions to make them more quantitative than qualitative.
+It should be pretty easy to answer the questions of which candidates send the most. The figuring out of what the emails are about may be harded; it seems like it might be a little hard to parse content with how it's set up (very messy). We may have to adjust our questions to make them more quantitative than qualitative.
 
 ```{r}
 emails <- emails |> 
@@ -60,10 +68,21 @@ Q1: Which political candidate sent the most emails?
 A1:
 
 ```{r}
-emails <- emails |>
-  group_by(sent) |>
-  summarize(email_count = n()) |>
-  arrange(desc(email_count)) 
+
+email_counts <- group_by(emails, name)
+
+
+email_summary <- summarise(email_counts, email_count = n())
+
+
+email_sorted <- arrange(email_summary, desc(email_count))
+
+
+most_emails <- email_sorted[1, ]
+
+
+most_emails
+
 ```
 
 Q2: During the election cycle, how frequently are emails sent? Which months/days saw the most volume?
@@ -71,28 +90,25 @@ Q2: During the election cycle, how frequently are emails sent? Which months/days
 A2:
 
 ```{r}
-emails_by_month <- emails |>
-  group_by(month) |>
-  summarize(email_count = n()) |>
-  arrange(desc(email_count)) 
 
-emails_by_day <- emails |>
-  group_by(day) |>
-  summarize(email_count = n()) |>
-  arrange(desc(email_count)) 
+monthly_group <- group_by(emails, month)
+monthly_summary <- summarise(monthly_group, email_count = n())
+monthly_volume <- arrange(monthly_summary, desc(email_count))
+
+
+daily_group <- group_by(emails, day)
+daily_summary <- summarise(daily_group, email_count = n())
+daily_volume <- arrange(daily_summary, desc(email_count))
+
+
+monthly_volume
+daily_volume
+
 ```
 
 Q3: What types of messages are they and does this vary by party? (Ex. are the emails about fundraising, event invitations, policy stances, etc.)
 
 A3:
-
-```{r}
-
-```
-
-Q4: Do the emails contain any polarization or fear-mongering language and does this vary by party? (words like “fight”, “invasion”, etc.)
-
-A4:
 
 ```{r}
 unique_words <- emails |>
@@ -114,11 +130,59 @@ word_counts_by_party <- emails |>
 word_counts_by_party
 ```
 
+Q4: Do the emails contain any polarization or fear-mongering language and does this vary by party? (words like “fight”, “invasion”, etc.)
+
+A4:
+
+```{r}
+unique_words <- emails |>
+  select(body) |>
+  unnest_tokens(word, body) |>
+  anti_join(stop_words, by = "word") |>
+  filter(word %in% c("fight", "invasion"))
+
+word_counts <- unique_words |>
+  count(word, sort = TRUE) |>
+  mutate(percent = (n / sum(n)) * 100)
+
+fear_words_by_party <- emails |>
+  select(body, party) |>
+  unnest_tokens(word, body) |>
+  anti_join(stop_words, by = "word") |>
+  filter(word %in% c("fight", "invasion")) |>
+  count(party, word, sort = TRUE) |>
+  group_by(party) |>
+  mutate(percent = (n / sum(n)) * 100)
+
+fear_words_by_party
+```
+
 Q5: How much money is the fundraising email asking for? Does this change depending on the month?
 
 A5:
 
 ```{r}
+emails_with_amounts <- mutate(emails, 
+                              amounts = str_extract_all(body, "\\$\\d+"))
+
+
+emails_with_amounts <- mutate(emails_with_amounts, 
+                              amounts = lapply(amounts, function(x) as.numeric(str_remove_all(x, "\\$"))))
+
+
+emails_expanded <- tidyr::unnest(emails_with_amounts, amounts)
+
+
+grouped_data <- group_by(emails_expanded, month)
+fundraising_summary <- summarise(grouped_data,
+                                  total_ask = sum(amounts, na.rm = TRUE),
+                                  average_ask = mean(amounts, na.rm = TRUE),
+                                  min_ask = min(amounts, na.rm = TRUE),
+                                  max_ask = max(amounts, na.rm = TRUE))
+fundraising_summary <- arrange(fundraising_summary, month)
+
+
+fundraising_summary
 
 ```
 -30-
