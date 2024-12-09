@@ -21,6 +21,24 @@ knitr::opts_chunk$set(echo = TRUE)
 
 In this notebook, we are doing data analysis on the political emails.
 
+##Final Story Memo
+
+Ryan Little,
+Baltimore Banner Data Editor
+Relittle@umd.edu
+
+The Democratic National Convention was a integral part of the 2024 presidential election. Kamala Harris stepped up to run for president, during this event, after President Joe Biden decided to stop running for re-election. 
+
+For this story, we want to examine the email habits of both Democrats and Republicans, specifically around the August 19-22 Democratic National Convention. We found that emails soliciting funding, from both parties, kicked into high gear during the convention, with the maximum asks for fundraising skyrocketing to more than 500% of the maximum ask from the previous days.
+
+In order to find the data we needed, we first took the dataset of emails to find out what politicians were emailing about in August. Clearly, the biggest concern was fundraising and money. We also went on to try to find which days in August saw the highest volume of emails and found that, perhaps unsurprisingly, communication heightened around the Democratic National Convention.
+
+With that analysis in hand, we wanted to figure out how emails related to fundraising changed in terms of how they were soliciting money during the DNC. As mentioned above, we found that the maximum, total and average asks went up, indicating a bit of a fervor for spending during the convention.
+
+There are simple ways we can corroborate and build on this story. We can turn to donor records, financial reports and more to flesh out this story, getting a more complete picture of the financial/fundraising changes that occurred around the DNC and how both parties navigated the monetary waters.
+
+In order to finish this project, we would reach out to media relations for the Democratic Party and ask for comment on their strategy. This story would provide valuable insights into how the fundraising side of politics works and we could make some data visualizations out of it. For example bar charts and pit charts would pair well with this data.
+
 ## Load libraries
 
 Loading required libraries for this analysis.
@@ -65,17 +83,21 @@ emails
 
 Q1: Which political candidate sent the most emails?
 
-A1:
+A1: Donald Trump sent the most emails in the 2024 election cycle. He sent at least 70% more emails than the other candidates. This is significant because he won the presidency.
 
 ```{r}
 
+emails$name[emails$name %in% c("Donald J. Trump", "President Trump")] <- "Donald J. Trump"
+
 email_counts <- group_by(emails, name)
+
 
 
 email_summary <- summarise(email_counts, email_count = n())
 
 
 email_sorted <- arrange(email_summary, desc(email_count))
+
 
 
 most_emails <- email_sorted[1, ]
@@ -85,9 +107,9 @@ most_emails
 
 ```
 
-Q2: During the election cycle, how frequently are emails sent? Which months/days saw the most volume?
+Q2: During the election cycle, how frequently are emails sent? Which days in August saw the most volume?
 
-A2:
+A2: August had the most emails due to the Democratic National Convention taking place the week of the 19th. There was a high concentration of emails sent in the days leading up to the convention and after, with the highest volume sent on the day of the event. 
 
 ```{r}
 
@@ -106,12 +128,15 @@ daily_volume
 
 ```
 
-Q3: What types of messages are they and does this vary by party? (Ex. are the emails about fundraising, event invitations, policy stances, etc.)
+Q3: What types of messages are democrats sending? (Ex. are the emails about fundraising, event invitations, policy stances, etc.)
 
-A3:
+A3: After looking past commonly used words, the top words sent in the democratic party were pertaining to donations and contributing money to their campaign. 
 
 ```{r}
+
+
 unique_words <- emails |>
+
   select(body) |>
   unnest_tokens(word, body) |>
   anti_join(stop_words, by = "word")
@@ -132,7 +157,7 @@ word_counts_by_party
 
 Q4: Do the emails contain any polarization or fear-mongering language and does this vary by party? (words like “fight”, “invasion”, etc.)
 
-A4:
+A4: Democrats used words like fight far more often which could indicate a campaign strategy of fighting back against Trump rather than showing their policy. The word invasion is important as well due to the border crisis, an integral part of the 2024 election. 
 
 ```{r}
 unique_words <- emails |>
@@ -157,9 +182,9 @@ fear_words_by_party <- emails |>
 fear_words_by_party
 ```
 
-Q5: How much money is the fundraising email asking for? Does this change depending on the month?
+Q5: On the days surrounding the Democratic Convention, what were some of the trends in email fundraising requests?
 
-A5:
+A5: The highest average asks were during the actual convention as opposed to the days immediately before and after, though not by a significant amount (only a few dollars). On August 21 and 22, the last two days of the convention the maximum ask went up approximately 5x the amount than the days around the event. 
 
 ```{r}
 emails_with_amounts <- mutate(emails, 
@@ -173,13 +198,13 @@ emails_with_amounts <- mutate(emails_with_amounts,
 emails_expanded <- tidyr::unnest(emails_with_amounts, amounts)
 
 
-grouped_data <- group_by(emails_expanded, month)
+grouped_data <- group_by(emails_expanded, day)
 fundraising_summary <- summarise(grouped_data,
                                   total_ask = sum(amounts, na.rm = TRUE),
                                   average_ask = mean(amounts, na.rm = TRUE),
                                   min_ask = min(amounts, na.rm = TRUE),
                                   max_ask = max(amounts, na.rm = TRUE))
-fundraising_summary <- arrange(fundraising_summary, month)
+fundraising_summary <- arrange(fundraising_summary, day)
 
 
 fundraising_summary
