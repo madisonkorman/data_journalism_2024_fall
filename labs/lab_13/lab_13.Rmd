@@ -27,7 +27,6 @@ library(janitor)
 library(rvest)
 library(lubridate)
 library(dplyr)
-
 ```
 
 ## Getting the Data
